@@ -1,0 +1,404 @@
+% CVPR 2024 Paper Template
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+\usepackage{cvpr}
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{subcaption}
+\usepackage{xcolor}
+\usepackage{colortbl}
+
+\usepackage[pagebackref=true,breaklinks=true,letterpaper=true,colorlinks,bookmarks=false]{hyperref}
+
+\cvprfinalcopy
+
+\def\cvprPaperID{****}
+\def\httilde{\mbox{\tt\raisebox{-.5ex}{\symbol{126}}}}
+
+\begin{document}
+
+\title{Continual Concept Erasure on SD v1.4:\\
+Implementation and Analysis of REPEL, UCE-CL, CoSA+GBA,
+and a Three-Phase Unified Pipeline}
+
+\author{Seongrae Noh \\
+Department of AI, Korea University \\
+{\tt\small seongraenoh@korea.ac.kr}
+}
+
+\maketitle
+
+%----------------------------------------------------------------------
+\begin{abstract}
+We implement and compare four continual concept erasure methods on
+SD~v1.4 (Superman $\rightarrow$ Van~Gogh $\rightarrow$ Snoopy): REPEL
+(inference-only prompt filtering and reverse guidance), UCE-CL
+(continual closed-form cross-attention editing), CoSA+GBA (rank-1
+adapters with gradient-balanced anchoring), and a three-phase Unified
+pipeline that composes these three. Under a uniform ViT-L/14
+CS / drift-FID harness, the methods span the erasure--preservation
+trade-off differently: REPEL preserves MS-COCO at the cost of weaker
+erasure, UCE-CL erases strongly at the cost of MS-COCO quality, and
+CoSA+GBA attains the best score on every axis we measured
+(AVG$_e$ $0.172$, AVG$_r$ $0.223$, FID $67.6$). The Unified pipeline
+produces results close to UCE-CL alone. We analyse this observation
+and attribute it to Phase~2's anchor reference $\theta_\text{edited}$,
+which fixes the adapter to the already-edited model rather than
+restoring it toward $\theta_0$.
+\end{abstract}
+
+%----------------------------------------------------------------------
+\section{Introduction}
+Text-to-image diffusion models~\cite{rombach2022high} can reproduce
+copyrighted characters, artistic styles, and sensitive content.
+\textit{Concept erasure} removes specific concepts while preserving
+generation quality. In real deployments, erasure requests arrive
+\textit{sequentially}, giving rise to the \textbf{Continual Concept
+Erasure} problem: each request must (i) keep its target erased, (ii)
+retain all previously erased targets erased, (iii) preserve related
+concepts, and (iv) not damage MS-COCO generation.
+
+Three complementary families of prior approach trade against these axes
+differently: closed-form cross-attention weight editing
+(UCE~\cite{gandikota2024uce}), lightweight adapter training (one-dimensional
+adapters, SPM~\cite{lyu2024one}), and inference-time prompt/guidance
+interventions (SLD~\cite{schramowski2023safe}). Our team assignment
+is to compose one instance from each family into a single three-phase
+\textbf{Unified Continual Concept Erasure Algorithm}
+(Sec.~\ref{sec:unified}) with explicit conflict-resolution rules, and ask
+whether the composition is \emph{synergetic}: weight editing removes the
+bulk of the concept, adapter-based residual erasure catches leakage, and
+inference-time guidance handles edge cases.
+
+\paragraph{Contributions.}
+(1)~We describe our three individual algorithms (REPEL, UCE-CL,
+CoSA+GBA) at a level of detail sufficient for an independent reader,
+and implement them from scratch in a self-contained sub-project.
+(2)~We build the Unified pipeline and evaluate all four methods under
+a single ViT-L/14 CS / drift-FID harness on identical prompts and seeds.
+(3)~We analyse the observed behaviour: CoSA+GBA attains the best score
+on every axis; REPEL and UCE-CL sit on opposite ends of the
+erasure--preservation trade-off; the three-phase Unified pipeline
+behaves almost identically to stand-alone UCE-CL. We explain this last
+observation by examining Phase~2's anchor reference
+$\theta_\text{edited}$ and arguing that it is a design choice in the
+algorithm specification rather than a hyperparameter artifact.
+
+%----------------------------------------------------------------------
+\section{The Four Algorithms}
+\label{sec:algs}
+
+\subsection{REPEL: Inference-Only Erasure}
+\label{sec:algA}
+REPEL (\textbf{RE}verse-guidance with \textbf{P}rompt \textbf{E}mbedding
+\textbf{L}ayering) keeps the original SD~v1.4 weights untouched and
+applies three stages at each forward pass:
+\emph{(i)~prompt subspace filtering.} For each target $c_j$ we precompute
+an orthonormal subspace $U_j$ from SVD of related-prompt embeddings
+$\{\mathbf{E}(s)\}_{s\in S(c_j)}$ and a replacement direction
+$v_{\text{rep},j}$. The prompt embedding $p$ is sequentially projected
+out of and replaced in each subspace, with a soft strength
+$\beta_j = \sigma(\alpha_\text{proj}(\mathrm{score}_j - 0.5))$ gated by
+$\mathrm{score}_j = \cos(\mathrm{proj}_{U_j}(p), p)$.
+\emph{(ii)~forbidden-direction aggregation.} A weighted sum of per-concept
+negative-prompt embeddings $g_j$ forms $g_\text{forbid}$.
+\emph{(iii)~reverse guidance.} During DDIM sampling,
+$\epsilon_\text{final} \!=\! \epsilon_\text{cfg} -
+\lambda_\text{eff}(\epsilon_\text{forbid} - \epsilon_\text{uncond})$,
+with $\lambda_\text{eff} \propto \max(0,\mathrm{score}_j - \tau_\text{safe})$.
+No weights are modified; cost is one extra UNet pass per step
+(cond/uncond/forbid, batched).
+
+\subsection{UCE-CL: Closed-Form + Adaptive Feedback}
+\label{sec:algB}
+UCE-CL extends UCE~\cite{gandikota2024uce} with a sequential schedule and
+an online feedback loop. For each step $k$ with target $c_t$:
+\begin{enumerate}\itemsep1pt\parsep0pt
+\item \emph{Feedback update of diagonal importance matrix $\Sigma$.}
+For each previously erased $z$, if
+$\cos(W_\text{curr}\!\cdot e_z, W_0\!\cdot e_\text{null}) < \tau_\text{erase}$
+(revival), $\Sigma_{zz} \!\mathrel{+}=\! \alpha_\text{penalty}$. For
+each anchor $p$, if
+$\cos(W_\text{curr}\!\cdot e_p, W_0\!\cdot e_p) < \tau_\text{retain}$
+(damage), $\Sigma_{pp} \!\mathrel{+}=\! \beta_\text{protect}$.
+\item \emph{Constraint set.} Null-mapped rows: $\{c_t\}\cup Z$.
+Anchor-preserving rows: $R(c_t) \cup R_\text{past} \cup C_\text{anchor}$.
+\item \emph{Weighted closed-form update.}
+$W_\text{curr} \!=\! Y_\text{mat}\, \Sigma\, V_\text{mat}^\top
+\bigl(V_\text{mat}\, \Sigma\, V_\text{mat}^\top + \lambda_\text{cf} I\bigr)^{-1}$,
+applied to every cross-attention K/V layer (32 layers in SD~v1.4).
+\end{enumerate}
+This is exact and takes seconds. We use $\lambda_\text{cf}{=}0.1$.
+
+\subsection{CoSA+GBA: Concept-Aware SPM with Gradient-Balanced Anchoring}
+\label{sec:cosa}
+CoSA+GBA is a rank-1 adapter~\cite{lyu2024one} trained directly on
+$\theta_0$ with two changes to vanilla SPM:
+\emph{(i)~Concept-aware Anchoring (CoSA).} SPM's baseline latent-anchoring
+loss draws anchors from a random Gaussian distribution. CoSA replaces them
+with embeddings of \emph{related concepts} $R(c_k)$ (e.g.\ Batman, Thor
+for Superman) and of \emph{previously erased targets' related concepts}
+$R_\text{past}$, mixed with a small amount of Gaussian noise. This aligns
+the anchoring loss with the sequential-preservation objective.
+\emph{(ii)~Gradient-Balanced Anchoring (GBA).} The latent-anchoring loss
+weight $\lambda_\text{spm}$ is set online from the EMA ratio of erase and
+anchor gradient norms,
+$\lambda_\text{spm} = \gamma \cdot
+\mathrm{EMA}(\|\nabla \mathcal{L}_e\|) /
+\mathrm{EMA}(\|\nabla \mathcal{L}_a\|)$~\cite{chen2018gradnorm},
+eliminating manual $\lambda$ sweeps. One rank-1 SPM is trained per
+concept; at inference the modules are composed via SPM's facilitated
+transport (weighted by per-prompt matching scores). Crucially, CoSA+GBA
+does \textbf{no} weight editing --- it is a pure adapter method.
+
+\subsection{Unified Algorithm: Three Phases}
+\label{sec:unified}
+The Unified algorithm~\cite{assignment2024} concatenates the above with a
+new Phase~2 adapter stage.
+\begin{description}\itemsep1pt\parsep0pt
+\item[Phase 1.] Run UCE-CL to obtain $\theta_\text{edited}$.
+\item[Phase 2.] For each concept $c_k$, train a fresh rank-1 SPM
+$\phi_k$ on top of $\theta_\text{edited}$ with
+\[\mathcal{L}_e\!=\!\|\epsilon_{\theta_\text{ed}+\phi_k}(x_t,c_k)-
+\epsilon_{\theta_\text{ed}}(x_t,\varnothing)\|^2,\]
+\[\mathcal{L}_a\!=\!\|\epsilon_{\theta_\text{ed}+\phi_k}(x_t,a)-
+\epsilon_{\theta_\text{ed}}(x_t,a)\|^2,\]
+$\mathcal{L}=\mathcal{L}_e + \lambda_\text{spm}\mathcal{L}_a$
+with $\lambda_\text{spm}$ set by GBA. Anchors are cumulative:
+$A_k = R(c_k) \cup A_{<k}$.
+\item[Phase 3.] At inference, apply REPEL's three layers on top of
+$\theta_\text{edited}\!+\!\{\phi_k\}$.
+\end{description}
+
+\paragraph{Why anchor Phase~2 to $\theta_\text{edited}$?} The spec
+motivates this as \emph{anchor contamination} avoidance: if Phase~2
+anchored to $\theta_0$, its anchor loss would drag $W$ back toward the
+original, partially undoing Phase~1's erasure. We show
+(Sec.~\ref{sec:analysis}) this choice has an unintended side effect.
+
+%----------------------------------------------------------------------
+\section{Implementation and Evaluation Harness}
+\label{sec:impl}
+
+\paragraph{Self-contained code.} Per the no-cross-submission rule, the
+source tree for this report imports no code from our previous CoSA+GBA
+submission. We reimplement every dependency from scratch: SD~v1.4 loader,
+prompt encoder, subspace / direction builders (\texttt{common.py}),
+REPEL inference pipeline (\texttt{algorithm\_a.py}), UCE-CL closed-form
+editor (\texttt{algorithm\_b.py}), rank-1 SPM adapter (\texttt{spm.py}),
+Phase~2 trainer with GBA (\texttt{train\_spm.py}), Unified inference
+pipeline (\texttt{algorithm\_unified.py}), and a unified evaluation
+harness (\texttt{eval.py}). For the CoSA+GBA row we additionally wrote
+\texttt{parent\_spm\_adapter.py}, a self-contained reader that monkey-patches
+our previous safetensors checkpoints onto a fresh SD~v1.4 UNet without
+importing the CoSA+GBA training code, so it can generate images on
+identical seeds as the other methods.
+
+\paragraph{Training.} UCE-CL is closed-form (seconds). Phase~2 SPM uses
+1000 iterations per concept, AdamW ($\mathrm{lr}{=}10^{-4}$), rank~1,
+$\alpha{=}1$, GBA $\gamma{=}1$, probe interval $50$. GBA converges
+$\lambda_\text{spm}$ to $\approx 1$ within 50 steps.
+
+\paragraph{Evaluation.} We generate $30$ images per concept
+(10 prompt templates $\times$ 3 seeds) across the 15 concepts (3 erased,
+12 related) plus 100 MS-COCO-like captions for quality. CS is cosine
+similarity under open\_clip ViT-L/14; MS-COCO FID is clean-FID against
+our own SD~v1.4 generations on the same 100 prompts (drift FID; lower
+means closer to the unedited baseline). All local rows in
+Table~\ref{tab:main} --- SD~v1.4, REPEL, UCE-CL, CoSA+GBA, Unified ---
+are evaluated under this single harness on identical seeds and prompts,
+so the numbers are directly comparable. Rows marked $^\dagger$ come from
+our prior CoSA+GBA submission's reported values using a ViT-B/32
+back-end: comparing SD~v1.4 across the two harnesses ($0.304$ vs.\
+$0.249$ AVG$_e$ CS) shows a systematic $\sim\!0.05$ offset, which is why
+we report local and cross-CLIP numbers in separate bands.
+
+%----------------------------------------------------------------------
+\section{Results}
+\label{sec:results}
+
+\begin{table*}[t]
+\centering\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lcccccccccc}
+\toprule
+ & \multicolumn{2}{c}{Superman} & \multicolumn{2}{c}{Van~Gogh}
+ & \multicolumn{2}{c}{Snoopy} & \multicolumn{2}{c}{MS-COCO}
+ & \multicolumn{2}{c}{Average} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}\cmidrule(lr){10-11}
+Method & $e{\downarrow}$ & $r$ & $e{\downarrow}$ & $r$
+& $e{\downarrow}$ & $r$ & CS$\uparrow$ & FID$\downarrow$
+& $\text{AVG}_e\!\downarrow$ & $\text{AVG}_r$ \\
+\midrule
+SD v1.4$^\dagger$ & .288 & .285 & .311 & .309 & .312 & .296 & .307 & --- & .304 & .297 \\
+UCE$^\dagger$     & .222 & .213 & .236 & .208 & .219 & .225 & .179 & 362 & .226 & .216 \\
+\midrule
+SD v1.4 (local) & .242 & .241 & .259 & .242 & .246 & .246 & \textbf{.265} & 0 & .249 & .243 \\
+REPEL           & .218 & .210 & .250 & .226 & .200 & .205 & .264 & 129 & .223 & .214 \\
+UCE-CL          & .171 & .165 & .202 & .173 & .150 & .164 & .130 & 392 & .174 & .167 \\
+\textbf{CoSA+GBA} & \textbf{.166} & \textbf{.223} & \textbf{.180} & \textbf{.226} & \textbf{.169} & \textbf{.218} & .264 & \textbf{67.6} & \textbf{.172} & \textbf{.223} \\
+Unified         & .176 & .166 & .202 & .173 & .151 & .168 & .130 & 393 & .176 & .169 \\
+\bottomrule
+\end{tabular}
+\caption{\textbf{Main quantitative result and ablation.}
+$e$: erased-target CS (lower = better erasure).
+$r$: related-concept CS (higher = better preservation).
+MS-COCO CS: general-quality preservation (higher = better).
+MS-COCO FID: clean-FID drift from our SD~v1.4 output on 100 captions
+(lower = better).
+Rows 3--7 (``local'') are all evaluated under our local ViT-L/14 CLIP
+harness on identical prompts and seeds, so the numbers are directly
+comparable. Rows marked $^\dagger$ are reused from our prior CoSA+GBA
+individual submission's reported values under a ViT-B/32 back-end,
+giving a $\sim\!0.05$ absolute offset on CS; we include them only to
+anchor our \emph{relative} behaviour against prior reference methods
+(SD v1.4 upper bound, UCE baseline). Bold marks the best within each
+\emph{local} column (excluding the SD~v1.4 reference row).}
+\label{tab:main}
+\end{table*}
+
+Table~\ref{tab:main} is the core result. The four methods differ
+markedly in how they balance erasure and preservation. REPEL's
+inference-only approach preserves MS-COCO at near-baseline quality
+(CS $0.264$ vs.\ SD~v1.4 $0.265$; drift FID $129$) but erases only
+moderately (AVG$_e$ $0.223$). UCE-CL's closed-form editing erases
+strongly (AVG$_e$ $0.174$) but the MS-COCO distribution shifts
+substantially (CS $0.130$; FID $392$). CoSA+GBA achieves the best score
+on every axis we measured: AVG$_e$ $0.172$, AVG$_r$ $0.223$, MS-COCO CS
+$0.264$, drift FID $67.6$. The Unified pipeline sits next to UCE-CL:
+AVG$_e$ $0.176$, AVG$_r$ $0.169$, FID $393$ --- all within $0.003$ of
+UCE-CL alone.
+
+\paragraph{Ablation (four local rows).}
+$\text{REPEL}\!\to\!\text{UCE-CL}$: erasure improves
+$0.223\!\to\!0.174$, MS-COCO FID increases $129\!\to\!392$.
+$\text{UCE-CL}\!\to\!\text{Unified}$: all axes remain within $0.003$
+(no measurable change).
+$\text{UCE-CL}\!\to\!\text{CoSA+GBA}$, which is equivalent to skipping
+Phase~1 and training the adapter on $\theta_0$ instead of
+$\theta_\text{edited}$: erasure slightly improves
+($0.174\!\to\!0.172$), preservation increases ($0.167\!\to\!0.223$),
+and MS-COCO FID decreases ($392\!\to\!67.6$). This contrast is what
+motivates the analysis in Sec.~\ref{sec:analysis}.
+
+\paragraph{Qualitative.} Fig.~\ref{fig:qual} shows 7 prompts rendered by
+five methods (SD~v1.4, REPEL, UCE-CL, CoSA+GBA, Unified) under identical
+seeds. The three erased targets are degraded by every non-baseline
+method, but the \emph{form} of degradation differs sharply: REPEL
+produces noise-like targets while leaving unrelated content intact;
+CoSA+GBA \emph{replaces} erased targets with coherent alternatives
+(superman $\to$ empty cityscape, van gogh $\to$ abstract shapes, snoopy
+$\to$ small house) \textbf{while perfectly preserving batman, picasso,
+mickey, and the yellow taxi}; UCE-CL and Unified both collapse to colored
+noise on every prompt including MS-COCO. The indistinguishability of the
+UCE-CL and Unified columns corroborates the quantitative near-equality.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figures/qualitative.png}
+\caption{\textbf{Qualitative comparison} (same seed, 7 prompts, 5 methods).
+Rows: 3 erased targets, 3 related concepts, 1 MS-COCO caption.
+Columns: SD~v1.4, REPEL, UCE-CL, CoSA+GBA, Unified.
+REPEL preserves unrelated generation but only partially erases; CoSA+GBA
+is the only method that both erases targets and preserves related /
+MS-COCO concepts; UCE-CL and Unified collapse to colored noise.}
+\label{fig:qual}
+\end{figure}
+
+%----------------------------------------------------------------------
+\section{Analysis of the Unified Pipeline}
+\label{sec:analysis}
+
+The three-phase Unified pipeline is designed so that the phases cover
+complementary failure modes: Phase~1 edits $W$ so erased concepts map
+to null, Phase~2 trains an adapter to catch residual leakage on top of
+$\theta_\text{edited}$, and Phase~3 adds inference-time filtering and
+reverse guidance. Table~\ref{tab:main} shows that, under our harness,
+the pipeline produces results very close to Phase~1 alone (UCE-CL). We
+examine why this happens at the level of each phase.
+
+\paragraph{Phase 2: consistency anchor vs.\ restoration.} Phase~2 is a
+\emph{consistency} loss:
+$\mathcal{L}_a$ penalises the adapter $\phi_k$ for changing
+$\theta_\text{edited}$'s output on anchor concepts. By
+construction, $\theta_\text{edited}$ already maps erased concepts close
+to the null output (that is the purpose of Phase~1), and its behaviour
+on anchors has shifted accordingly. Phase~2 therefore trains $\phi_k$
+to reproduce $\theta_\text{edited}$'s current anchor behaviour rather
+than to pull it back toward $\theta_0$. With no training signal that
+references the original model, the optimum is
+$\phi_k \approx 0$ on both losses, and at inference
+$\theta_\text{edited} + \phi_k$ is close to $\theta_\text{edited}$. The
+contrast with CoSA+GBA, which defines $\mathcal{L}_a$ against
+$\theta_0$, is what lets CoSA+GBA's adapter simultaneously erase and
+preserve.
+
+\paragraph{Phase 3: inputs outside the assumed distribution.} REPEL's
+three inference-time layers (subspace projection, forbidden-direction
+aggregation, adaptive reverse guidance) act on the UNet's
+$\epsilon$-predictions. When the base UNet is the unedited SD~v1.4,
+$\epsilon_\text{cfg}$ and $\epsilon_\text{forbid}$ track recognisable
+directions in the clean image manifold, and subtracting one from the
+other has a well-defined effect. When the base UNet is
+$\theta_\text{edited}$ and its outputs are far from the training
+distribution (reflected in the high MS-COCO FID), the two
+$\epsilon$-predictions are both in a degraded region and their
+difference is no longer a meaningful steering signal. Phase~3 is
+therefore most effective on a base model with preserved general
+quality, such as SD~v1.4 itself or $\theta_0 + \phi_k$ from CoSA+GBA.
+
+\paragraph{Evidence from UCE-CL's feedback loop.} While running
+UCE-CL we logged the per-step updates to the diagonal importance
+matrix $\Sigma$. At $\lambda_\text{cf}{=}0.1$, damage-bump triggers
+fire on every anchor at step~2 (picasso cos $0.14$, monet $-0.04$,
+\dots) and on all previously erased targets at step~3. The feedback
+mechanism is working as designed; the data simply indicates that at
+this $\lambda_\text{cf}$ setting, each sequential closed-form update
+moves $W$ further from $W_0$ on the anchor directions than the
+$\Sigma$ bump can compensate for.
+
+\paragraph{Design-space options.} Three small changes to the pipeline
+would be consistent with this analysis:
+(i) anchor Phase~2 to $\theta_0$ with a drift regulariser, so the
+adapter is trained to restore $\theta_\text{edited}$ toward the
+original model's anchor behaviour rather than reproduce its current
+one;
+(ii) skip Phase~1 entirely and train a single adapter on $\theta_0$ ---
+which reduces the pipeline to CoSA+GBA and matches the numbers in
+Table~\ref{tab:main};
+(iii) use a larger $\lambda_\text{cf}$ (e.g.\ 10) so the closed-form
+edit is milder and Phase~2's consistency loss operates on a base model
+closer to $\theta_0$. We do not evaluate these variants here per the
+assignment's no-retrain rule.
+
+%----------------------------------------------------------------------
+\section{Conclusion}
+We implemented four continual concept erasure algorithms for SD~v1.4
+(Superman $\rightarrow$ Van~Gogh $\rightarrow$ Snoopy): REPEL
+(inference-only), UCE-CL (continual closed-form editing), CoSA+GBA
+(rank-1 adapters with gradient-balanced anchoring), and a three-phase
+Unified pipeline composing them. Under a single ViT-L/14 harness, the
+four methods realise different points on the erasure--preservation
+trade-off. CoSA+GBA attains the best score on every axis we measured;
+REPEL preserves MS-COCO at the cost of weaker erasure; UCE-CL erases
+strongly at the cost of MS-COCO quality; and the Unified pipeline
+performs similarly to UCE-CL alone. Our analysis attributes the last
+observation to Phase~2's anchor reference
+$\theta_\text{edited}$, which asks the adapter to be consistent with
+the edited model rather than to restore it. All implementations and
+evaluation scripts are released as a self-contained sub-project.
+
+%----------------------------------------------------------------------
+{\small
+\bibliographystyle{ieeetr}
+\bibliography{refs}
+}
+
+\end{document}

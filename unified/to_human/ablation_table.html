@@ -1,0 +1,35 @@
+<!doctype html><html><head><meta charset='utf-8'>
+<title>Unified CE — Ablation Table</title>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;
+     max-width:1100px;margin:2em auto;padding:1em;color:#111;}
+h1,h2{font-weight:600}
+table{border-collapse:collapse;width:100%;margin:1em 0}
+th,td{border:1px solid #ccc;padding:.5em .7em;text-align:right;font-variant-numeric:tabular-nums;font-size:.9em}
+th:first-child,td:first-child{text-align:left}
+tr:nth-child(odd) td{background:#fafafa}
+.good{color:#067d39;font-weight:600}
+.bad{color:#a33;font-weight:600}
+small{color:#555}
+</style>
+</head><body>
+<h1>Unified Continual Concept Erasure — Ablation Table</h1>
+<p><small>Main metric: lower CS on erased concepts (e_CS), higher CS on related
+(r_CS), lower COCO FID. CoSA+GBA from parent run; Algorithm A / B / Unified
+implemented locally. Numbers in the parent-sourced rows use the CLIP-Score
+convention from Lyu et al. 2024 (open_clip ViT-L/14).</small></p>
+<table><thead><tr>
+<th>Method</th><th>Sup_e↓</th><th>Sup_r</th>
+<th>VG_e↓</th><th>VG_r</th>
+<th>Sno_e↓</th><th>Sno_r</th>
+<th>COCO_CS↑</th><th>COCO_FID↓</th>
+<th>AVG_e↓</th><th>AVG_r</th>
+</tr></thead><tbody>
+<tr><td>SD_v1.4</td><td>0.2881</td><td>0.2847</td><td>0.3107</td><td>0.3093</td><td>0.3120</td><td>0.2955</td><td>0.3074</td><td>—</td><td>0.3036</td><td>0.2965</td></tr>
+<tr><td>UCE</td><td>0.2224</td><td>0.2133</td><td>0.2355</td><td>0.2080</td><td>0.2193</td><td>0.2251</td><td>0.1787</td><td>362.35</td><td>0.2257</td><td>0.2155</td></tr>
+<tr><td>REPEL</td><td>0.2183</td><td>0.2105</td><td>0.2504</td><td>0.2263</td><td>0.2001</td><td>0.2053</td><td>0.2644</td><td>128.71</td><td>0.2229</td><td>0.2140</td></tr>
+<tr><td>UCE-CL</td><td>0.1706</td><td>0.1646</td><td>0.2018</td><td>0.1733</td><td>0.1496</td><td>0.1644</td><td>0.1295</td><td>392.34</td><td>0.1740</td><td>0.1674</td></tr>
+<tr><td>CoSA_GBA</td><td>0.1659</td><td>0.2232</td><td>0.1798</td><td>0.2261</td><td>0.1693</td><td>0.2184</td><td>0.2640</td><td>67.57</td><td>0.1717</td><td>0.2225</td></tr>
+<tr><td>Unified</td><td>0.1758</td><td>0.1661</td><td>0.2015</td><td>0.1731</td><td>0.1509</td><td>0.1679</td><td>0.1304</td><td>393.23</td><td>0.1761</td><td>0.1691</td></tr>
+<tr><td>SD_v1.4_local</td><td>0.2421</td><td>0.2414</td><td>0.2593</td><td>0.2424</td><td>0.2464</td><td>0.2464</td><td>0.2646</td><td>0.00</td><td>0.2493</td><td>0.2434</td></tr>
+</tbody></table></body></html>

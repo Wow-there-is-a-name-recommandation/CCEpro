@@ -1,0 +1,17 @@
+[
+  {
+    "image_path": "data/erase/van_gogh_001.png",
+    "prompt": "a landscape in the style of Van Gogh",
+    "mode": "erase"
+  },
+  {
+    "image_path": "data/retain/dog_001.png",
+    "prompt": "a photo of a beagle running in a park",
+    "mode": "retain"
+  },
+  {
+    "image_path": "data/retain/city_001.png",
+    "prompt": "a cinematic photo of a city skyline at night",
+    "mode": "retain"
+  }
+]

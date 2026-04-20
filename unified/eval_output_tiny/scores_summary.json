@@ -1,0 +1,25 @@
+{
+  "out_root": "unified/eval_output_tiny",
+  "device": "cuda:0",
+  "results": {
+    "algorithm_a": {
+      "n_images": 16,
+      "prompt": "a photo of superman flying over the city",
+      "CS": 0.17692360561341047,
+      "FID_vs_sd_v1.4": 428.2030470787191
+    },
+    "sd_v1.4": {
+      "n_images": 16,
+      "prompt": "a photo of superman flying over the city",
+      "CS": 0.2686408767476678,
+      "FID_vs_sd_v1.4": 0.0
+    },
+    "coco": {
+      "n_images": 16,
+      "prompt": "a man riding a bicycle down a city street",
+      "CS": 0.24888894706964493,
+      "FID_vs_sd_v1.4": null,
+      "note": "COCO folder is a general-prompt sample set, not a separate model. FID_vs_sd_v1.4 is left as null in this tiny setup."
+    }
+  }
+}

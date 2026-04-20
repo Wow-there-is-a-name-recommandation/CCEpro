@@ -1,0 +1,139 @@
+% ---------------------------------------------------------------
+%  cvpr.sty
+%  Style file for CVPR 2024 papers.
+%  Based on the standard CVPR/ICCV LaTeX style.
+%
+%  Usage:
+%    \usepackage{cvpr}          % for review (double-blind)
+%    \cvprfinalcopy              % for camera-ready
+% ---------------------------------------------------------------
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{cvpr}[2024/01/01 CVPR 2024 style]
+
+% ---------------------------------------------------------------
+%  Conditional flags
+% ---------------------------------------------------------------
+\newif\ifcvprfinal
+\cvprfinalfalse
+\def\cvprfinalcopy{\global\cvprfinaltrue}
+
+% ---------------------------------------------------------------
+%  Page layout  (letter paper, CVPR standard margins)
+% ---------------------------------------------------------------
+\RequirePackage{eso-pic}
+\RequirePackage{xspace}
+
+\setlength{\textheight}{8.875in}
+\setlength{\textwidth}{6.875in}
+\setlength{\columnsep}{0.3125in}
+\setlength{\topmargin}{0in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\parindent}{1pc}
+\setlength{\oddsidemargin}{-.304in}
+\setlength{\evensidemargin}{-.304in}
+
+% ---------------------------------------------------------------
+%  Title, author, abstract formatting
+% ---------------------------------------------------------------
+\RequirePackage{ifthen}
+
+\def\@maketitle{%
+  \newpage
+  \null
+  \vskip 0.1in
+  \begin{center}%
+    {\Large\bf \@title \par}%
+    \vskip 0.15in
+    \ifcvprfinal
+      {\large
+        \lineskip .5em
+        \begin{tabular}[t]{c}%
+          \@author
+        \end{tabular}\par}%
+    \else
+      {\large Anonymous CVPR Submission\\
+       \vskip 0.05in Paper ID \cvprPaperID}%
+    \fi
+    \vskip 0.2in
+  \end{center}%
+}
+
+\renewenvironment{abstract}{%
+  \centerline{\large\bf Abstract}%
+  \vspace{0.5ex}%
+  \begin{quote}%
+}{%
+  \par
+  \end{quote}%
+  \vskip 1ex%
+}
+
+% ---------------------------------------------------------------
+%  Section formatting
+% ---------------------------------------------------------------
+\renewcommand\section{\@startsection{section}{1}{\z@}%
+  {-10\p@ \@plus -4\p@ \@minus -2\p@}%
+  {4\p@}%
+  {\normalfont\large\bf}}
+
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+  {-8\p@ \@plus -2\p@ \@minus -2\p@}%
+  {4\p@}%
+  {\normalfont\normalsize\bf}}
+
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+  {-6\p@ \@plus -2\p@ \@minus -1\p@}%
+  {2\p@}%
+  {\normalfont\normalsize\bf}}
+
+% ---------------------------------------------------------------
+%  Caption formatting
+% ---------------------------------------------------------------
+\setlength{\abovecaptionskip}{6\p@}
+\setlength{\belowcaptionskip}{0\p@}
+\long\def\@makecaption#1#2{%
+  \vskip\abovecaptionskip
+  \sbox\@tempboxa{#1: #2}%
+  \ifdim \wd\@tempboxa >\hsize
+    #1: #2\par
+  \else
+    \global \@minipagefalse
+    \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
+  \fi
+  \vskip\belowcaptionskip}
+
+% ---------------------------------------------------------------
+%  Footnote / page number handling
+% ---------------------------------------------------------------
+\ifcvprfinal
+  % camera-ready: show page numbers
+  \pagestyle{plain}
+\else
+  % review: show page numbers, add confidential header
+  \pagestyle{plain}
+\fi
+
+% ---------------------------------------------------------------
+%  Paper ID (for review mode)
+% ---------------------------------------------------------------
+\def\cvprPaperID#1{\gdef\cvprPaperID{#1}}
+\ifx\cvprPaperID\undefined
+  \def\cvprPaperID{****}
+\fi
+
+% ---------------------------------------------------------------
+%  Ruler on the left margin (review mode only)
+% ---------------------------------------------------------------
+\newcommand{\cvprruler}{}  % placeholder – full version draws a ruler
+
+% ---------------------------------------------------------------
+%  Convenience: \figref, \tabref, \secref
+% ---------------------------------------------------------------
+\newcommand{\figref}[1]{Fig.~\ref{#1}}
+\newcommand{\tabref}[1]{Table~\ref{#1}}
+\newcommand{\secref}[1]{Sec.~\ref{#1}}
+\newcommand{\equref}[1]{Eq.~\ref{#1}}
+
+\endinput

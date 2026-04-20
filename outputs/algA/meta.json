@@ -1,0 +1,20 @@
+[
+  {
+    "id": 0,
+    "prompt": "a photo of superman flying over the city",
+    "seed": 0,
+    "image_path": "outputs/algA/0000.png"
+  },
+  {
+    "id": 1,
+    "prompt": "a photo of batman flying over the city",
+    "seed": 1,
+    "image_path": "outputs/algA/0001.png"
+  },
+  {
+    "id": 2,
+    "prompt": "a photo of a person walking in a park",
+    "seed": 2,
+    "image_path": "outputs/algA/0002.png"
+  }
+]

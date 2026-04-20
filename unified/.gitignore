@@ -1,0 +1,18 @@
+# Large outputs / generated artifacts
+output/
+eval_output/*/
+eval_output/*_run.log
+qualitative/
+
+# LaTeX build artifacts
+report/main.aux
+report/main.bbl
+report/main.blg
+report/main.brf
+report/main.log
+report/main.out
+report/main.toc
+
+# Scratch
+*.pyc
+__pycache__/

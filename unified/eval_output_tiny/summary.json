@@ -1,0 +1,7 @@
+{
+  "n_samples_per_model": 15,
+  "algorithm_a_prompt": "a photo of superman flying over the city",
+  "sd_prompt": "a photo of superman flying over the city",
+  "coco_prompt": "a man riding a bicycle down a city street",
+  "saved_to": "unified/eval_output_tiny"
+}
