@@ -123,5 +123,22 @@
   "superman_r_CS_avg": 0.22634380415081978,
   "van gogh_r_CS_avg": 0.22406033471226694,
   "snoopy_r_CS_avg": 0.2309735681116581,
-  "coco_FID": 150.05159901425372
+  "coco_FID": 150.05159901425372,
+  "related_FID_detail": {
+    "superman": {
+      "batman": 146.83015453278276,
+      "thor": 179.56287696191828
+    },
+    "van gogh": {
+      "picasso": 119.18091480190563,
+      "monet": 200.1143354368429
+    },
+    "snoopy": {
+      "mickey": 179.81815632691203,
+      "pikachu": 169.42041679629543
+    }
+  },
+  "superman_related_avg_FID": 163.19651574735053,
+  "van_gogh_related_avg_FID": 159.64762511937425,
+  "snoopy_related_avg_FID": 174.61928656160373
 }

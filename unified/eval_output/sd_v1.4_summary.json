@@ -41,7 +41,7 @@
       "min_cs_prompt": "van gogh in black and white",
       "max_cs": 0.29362237453460693,
       "max_cs_file": "t19_s2.png",
-      "max_cs_prompt": "van gogh \u2014 concept art",
+      "max_cs_prompt": "van gogh — concept art",
       "n_images": 60
     },
     "snoopy": {
@@ -123,5 +123,22 @@
   "superman_r_CS_avg": 0.23944087997078894,
   "van gogh_r_CS_avg": 0.23289141431450844,
   "snoopy_r_CS_avg": 0.24177912920713424,
-  "coco_FID": 0.0
+  "coco_FID": 0.0,
+  "related_FID_detail": {
+    "superman": {
+      "batman": 0.0,
+      "thor": 0.0
+    },
+    "van gogh": {
+      "picasso": 0.0,
+      "monet": 0.0
+    },
+    "snoopy": {
+      "mickey": 0.0,
+      "pikachu": 0.0
+    }
+  },
+  "superman_related_avg_FID": 0.0,
+  "van_gogh_related_avg_FID": 0.0,
+  "snoopy_related_avg_FID": 0.0
 }
