@@ -1,0 +1,112 @@
+[
+  {
+    "file": "t03_s0.png",
+    "prompt": "mickey in a cinematic composition",
+    "seed": 7,
+    "concept": "mickey",
+    "template_index": 3,
+    "seed_index": 0,
+    "cs": 0.2162042260169983,
+    "rank_high": 10,
+    "rank_low": 1
+  },
+  {
+    "file": "t00_s0.png",
+    "prompt": "a photo of mickey",
+    "seed": 1,
+    "concept": "mickey",
+    "template_index": 0,
+    "seed_index": 0,
+    "cs": 0.22506393492221832,
+    "rank_high": 9,
+    "rank_low": 2
+  },
+  {
+    "file": "t00_s1.png",
+    "prompt": "a photo of mickey",
+    "seed": 2,
+    "concept": "mickey",
+    "template_index": 0,
+    "seed_index": 1,
+    "cs": 0.22727829217910767,
+    "rank_high": 8,
+    "rank_low": 3
+  },
+  {
+    "file": "t03_s1.png",
+    "prompt": "mickey in a cinematic composition",
+    "seed": 8,
+    "concept": "mickey",
+    "template_index": 3,
+    "seed_index": 1,
+    "cs": 0.23445823788642883,
+    "rank_high": 7,
+    "rank_low": 4
+  },
+  {
+    "file": "t01_s0.png",
+    "prompt": "a painting of mickey",
+    "seed": 3,
+    "concept": "mickey",
+    "template_index": 1,
+    "seed_index": 0,
+    "cs": 0.23500579595565796,
+    "rank_high": 6,
+    "rank_low": 5
+  },
+  {
+    "file": "t04_s1.png",
+    "prompt": "mickey in a dramatic pose",
+    "seed": 10,
+    "concept": "mickey",
+    "template_index": 4,
+    "seed_index": 1,
+    "cs": 0.2357778251171112,
+    "rank_high": 5,
+    "rank_low": 6
+  },
+  {
+    "file": "t04_s0.png",
+    "prompt": "mickey in a dramatic pose",
+    "seed": 9,
+    "concept": "mickey",
+    "template_index": 4,
+    "seed_index": 0,
+    "cs": 0.23583652079105377,
+    "rank_high": 4,
+    "rank_low": 7
+  },
+  {
+    "file": "t02_s0.png",
+    "prompt": "an image of mickey",
+    "seed": 5,
+    "concept": "mickey",
+    "template_index": 2,
+    "seed_index": 0,
+    "cs": 0.23969340324401855,
+    "rank_high": 3,
+    "rank_low": 8
+  },
+  {
+    "file": "t01_s1.png",
+    "prompt": "a painting of mickey",
+    "seed": 4,
+    "concept": "mickey",
+    "template_index": 1,
+    "seed_index": 1,
+    "cs": 0.2444666624069214,
+    "rank_high": 2,
+    "rank_low": 9
+  },
+  {
+    "file": "t02_s1.png",
+    "prompt": "an image of mickey",
+    "seed": 6,
+    "concept": "mickey",
+    "template_index": 2,
+    "seed_index": 1,
+    "cs": 0.2514805793762207,
+    "rank_high": 1,
+    "rank_low": 10
+  }
+]

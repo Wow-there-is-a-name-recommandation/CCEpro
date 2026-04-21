@@ -1,0 +1,162 @@
+[
+  {
+    "file": "t00_s0.png",
+    "prompt": "a photo of van gogh",
+    "seed": 1,
+    "concept": "van gogh",
+    "template_index": 0,
+    "seed_index": 0
+  },
+  {
+    "file": "t00_s1.png",
+    "prompt": "a photo of van gogh",
+    "seed": 2,
+    "concept": "van gogh",
+    "template_index": 0,
+    "seed_index": 1
+  },
+  {
+    "file": "t01_s0.png",
+    "prompt": "a painting of van gogh",
+    "seed": 3,
+    "concept": "van gogh",
+    "template_index": 1,
+    "seed_index": 0
+  },
+  {
+    "file": "t01_s1.png",
+    "prompt": "a painting of van gogh",
+    "seed": 4,
+    "concept": "van gogh",
+    "template_index": 1,
+    "seed_index": 1
+  },
+  {
+    "file": "t02_s0.png",
+    "prompt": "an image of van gogh",
+    "seed": 5,
+    "concept": "van gogh",
+    "template_index": 2,
+    "seed_index": 0
+  },
+  {
+    "file": "t02_s1.png",
+    "prompt": "an image of van gogh",
+    "seed": 6,
+    "concept": "van gogh",
+    "template_index": 2,
+    "seed_index": 1
+  },
+  {
+    "file": "t03_s0.png",
+    "prompt": "van gogh in a cinematic composition",
+    "seed": 7,
+    "concept": "van gogh",
+    "template_index": 3,
+    "seed_index": 0
+  },
+  {
+    "file": "t03_s1.png",
+    "prompt": "van gogh in a cinematic composition",
+    "seed": 8,
+    "concept": "van gogh",
+    "template_index": 3,
+    "seed_index": 1
+  },
+  {
+    "file": "t04_s0.png",
+    "prompt": "van gogh in a dramatic pose",
+    "seed": 9,
+    "concept": "van gogh",
+    "template_index": 4,
+    "seed_index": 0
+  },
+  {
+    "file": "t04_s1.png",
+    "prompt": "van gogh in a dramatic pose",
+    "seed": 10,
+    "concept": "van gogh",
+    "template_index": 4,
+    "seed_index": 1
+  },
+  {
+    "file": "t05_s0.png",
+    "prompt": "van gogh on a city street",
+    "seed": 11,
+    "concept": "van gogh",
+    "template_index": 5,
+    "seed_index": 0
+  },
+  {
+    "file": "t05_s1.png",
+    "prompt": "van gogh on a city street",
+    "seed": 12,
+    "concept": "van gogh",
+    "template_index": 5,
+    "seed_index": 1
+  },
+  {
+    "file": "t06_s0.png",
+    "prompt": "a detailed illustration of van gogh",
+    "seed": 13,
+    "concept": "van gogh",
+    "template_index": 6,
+    "seed_index": 0
+  },
+  {
+    "file": "t06_s1.png",
+    "prompt": "a detailed illustration of van gogh",
+    "seed": 14,
+    "concept": "van gogh",
+    "template_index": 6,
+    "seed_index": 1
+  },
+  {
+    "file": "t07_s0.png",
+    "prompt": "van gogh with stylized shading",
+    "seed": 15,
+    "concept": "van gogh",
+    "template_index": 7,
+    "seed_index": 0
+  },
+  {
+    "file": "t07_s1.png",
+    "prompt": "van gogh with stylized shading",
+    "seed": 16,
+    "concept": "van gogh",
+    "template_index": 7,
+    "seed_index": 1
+  },
+  {
+    "file": "t08_s0.png",
+    "prompt": "a digital artwork of van gogh",
+    "seed": 17,
+    "concept": "van gogh",
+    "template_index": 8,
+    "seed_index": 0
+  },
+  {
+    "file": "t08_s1.png",
+    "prompt": "a digital artwork of van gogh",
+    "seed": 18,
+    "concept": "van gogh",
+    "template_index": 8,
+    "seed_index": 1
+  },
+  {
+    "file": "t09_s0.png",
+    "prompt": "a close-up portrait of van gogh",
+    "seed": 19,
+    "concept": "van gogh",
+    "template_index": 9,
+    "seed_index": 0
+  },
+  {
+    "file": "t09_s1.png",
+    "prompt": "a close-up portrait of van gogh",
+    "seed": 20,
+    "concept": "van gogh",
+    "template_index": 9,
+    "seed_index": 1
+  }
+]

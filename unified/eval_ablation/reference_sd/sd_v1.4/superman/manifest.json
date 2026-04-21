@@ -1,0 +1,482 @@
+[
+  {
+    "file": "t00_s0.png",
+    "prompt": "a photo of superman",
+    "seed": 1,
+    "concept": "superman",
+    "template_index": 0,
+    "seed_index": 0
+  },
+  {
+    "file": "t00_s1.png",
+    "prompt": "a photo of superman",
+    "seed": 2,
+    "concept": "superman",
+    "template_index": 0,
+    "seed_index": 1
+  },
+  {
+    "file": "t00_s2.png",
+    "prompt": "a photo of superman",
+    "seed": 3,
+    "concept": "superman",
+    "template_index": 0,
+    "seed_index": 2
+  },
+  {
+    "file": "t01_s0.png",
+    "prompt": "a painting of superman",
+    "seed": 4,
+    "concept": "superman",
+    "template_index": 1,
+    "seed_index": 0
+  },
+  {
+    "file": "t01_s1.png",
+    "prompt": "a painting of superman",
+    "seed": 5,
+    "concept": "superman",
+    "template_index": 1,
+    "seed_index": 1
+  },
+  {
+    "file": "t01_s2.png",
+    "prompt": "a painting of superman",
+    "seed": 6,
+    "concept": "superman",
+    "template_index": 1,
+    "seed_index": 2
+  },
+  {
+    "file": "t02_s0.png",
+    "prompt": "an image of superman",
+    "seed": 7,
+    "concept": "superman",
+    "template_index": 2,
+    "seed_index": 0
+  },
+  {
+    "file": "t02_s1.png",
+    "prompt": "an image of superman",
+    "seed": 8,
+    "concept": "superman",
+    "template_index": 2,
+    "seed_index": 1
+  },
+  {
+    "file": "t02_s2.png",
+    "prompt": "an image of superman",
+    "seed": 9,
+    "concept": "superman",
+    "template_index": 2,
+    "seed_index": 2
+  },
+  {
+    "file": "t03_s0.png",
+    "prompt": "superman in a cinematic composition",
+    "seed": 10,
+    "concept": "superman",
+    "template_index": 3,
+    "seed_index": 0
+  },
+  {
+    "file": "t03_s1.png",
+    "prompt": "superman in a cinematic composition",
+    "seed": 11,
+    "concept": "superman",
+    "template_index": 3,
+    "seed_index": 1
+  },
+  {
+    "file": "t03_s2.png",
+    "prompt": "superman in a cinematic composition",
+    "seed": 12,
+    "concept": "superman",
+    "template_index": 3,
+    "seed_index": 2
+  },
+  {
+    "file": "t04_s0.png",
+    "prompt": "superman in a dramatic pose",
+    "seed": 13,
+    "concept": "superman",
+    "template_index": 4,
+    "seed_index": 0
+  },
+  {
+    "file": "t04_s1.png",
+    "prompt": "superman in a dramatic pose",
+    "seed": 14,
+    "concept": "superman",
+    "template_index": 4,
+    "seed_index": 1
+  },
+  {
+    "file": "t04_s2.png",
+    "prompt": "superman in a dramatic pose",
+    "seed": 15,
+    "concept": "superman",
+    "template_index": 4,
+    "seed_index": 2
+  },
+  {
+    "file": "t05_s0.png",
+    "prompt": "superman on a city street",
+    "seed": 16,
+    "concept": "superman",
+    "template_index": 5,
+    "seed_index": 0
+  },
+  {
+    "file": "t05_s1.png",
+    "prompt": "superman on a city street",
+    "seed": 17,
+    "concept": "superman",
+    "template_index": 5,
+    "seed_index": 1
+  },
+  {
+    "file": "t05_s2.png",
+    "prompt": "superman on a city street",
+    "seed": 18,
+    "concept": "superman",
+    "template_index": 5,
+    "seed_index": 2
+  },
+  {
+    "file": "t06_s0.png",
+    "prompt": "a detailed illustration of superman",
+    "seed": 19,
+    "concept": "superman",
+    "template_index": 6,
+    "seed_index": 0
+  },
+  {
+    "file": "t06_s1.png",
+    "prompt": "a detailed illustration of superman",
+    "seed": 20,
+    "concept": "superman",
+    "template_index": 6,
+    "seed_index": 1
+  },
+  {
+    "file": "t06_s2.png",
+    "prompt": "a detailed illustration of superman",
+    "seed": 21,
+    "concept": "superman",
+    "template_index": 6,
+    "seed_index": 2
+  },
+  {
+    "file": "t07_s0.png",
+    "prompt": "superman with stylized shading",
+    "seed": 22,
+    "concept": "superman",
+    "template_index": 7,
+    "seed_index": 0
+  },
+  {
+    "file": "t07_s1.png",
+    "prompt": "superman with stylized shading",
+    "seed": 23,
+    "concept": "superman",
+    "template_index": 7,
+    "seed_index": 1
+  },
+  {
+    "file": "t07_s2.png",
+    "prompt": "superman with stylized shading",
+    "seed": 24,
+    "concept": "superman",
+    "template_index": 7,
+    "seed_index": 2
+  },
+  {
+    "file": "t08_s0.png",
+    "prompt": "a digital artwork of superman",
+    "seed": 25,
+    "concept": "superman",
+    "template_index": 8,
+    "seed_index": 0
+  },
+  {
+    "file": "t08_s1.png",
+    "prompt": "a digital artwork of superman",
+    "seed": 26,
+    "concept": "superman",
+    "template_index": 8,
+    "seed_index": 1
+  },
+  {
+    "file": "t08_s2.png",
+    "prompt": "a digital artwork of superman",
+    "seed": 27,
+    "concept": "superman",
+    "template_index": 8,
+    "seed_index": 2
+  },
+  {
+    "file": "t09_s0.png",
+    "prompt": "a close-up portrait of superman",
+    "seed": 28,
+    "concept": "superman",
+    "template_index": 9,
+    "seed_index": 0
+  },
+  {
+    "file": "t09_s1.png",
+    "prompt": "a close-up portrait of superman",
+    "seed": 29,
+    "concept": "superman",
+    "template_index": 9,
+    "seed_index": 1
+  },
+  {
+    "file": "t09_s2.png",
+    "prompt": "a close-up portrait of superman",
+    "seed": 30,
+    "concept": "superman",
+    "template_index": 9,
+    "seed_index": 2
+  },
+  {
+    "file": "t10_s0.png",
+    "prompt": "superman in high resolution",
+    "seed": 31,
+    "concept": "superman",
+    "template_index": 10,
+    "seed_index": 0
+  },
+  {
+    "file": "t10_s1.png",
+    "prompt": "superman in high resolution",
+    "seed": 32,
+    "concept": "superman",
+    "template_index": 10,
+    "seed_index": 1
+  },
+  {
+    "file": "t10_s2.png",
+    "prompt": "superman in high resolution",
+    "seed": 33,
+    "concept": "superman",
+    "template_index": 10,
+    "seed_index": 2
+  },
+  {
+    "file": "t11_s0.png",
+    "prompt": "superman looking at the viewer",
+    "seed": 34,
+    "concept": "superman",
+    "template_index": 11,
+    "seed_index": 0
+  },
+  {
+    "file": "t11_s1.png",
+    "prompt": "superman looking at the viewer",
+    "seed": 35,
+    "concept": "superman",
+    "template_index": 11,
+    "seed_index": 1
+  },
+  {
+    "file": "t11_s2.png",
+    "prompt": "superman looking at the viewer",
+    "seed": 36,
+    "concept": "superman",
+    "template_index": 11,
+    "seed_index": 2
+  },
+  {
+    "file": "t12_s0.png",
+    "prompt": "a poster of superman",
+    "seed": 37,
+    "concept": "superman",
+    "template_index": 12,
+    "seed_index": 0
+  },
+  {
+    "file": "t12_s1.png",
+    "prompt": "a poster of superman",
+    "seed": 38,
+    "concept": "superman",
+    "template_index": 12,
+    "seed_index": 1
+  },
+  {
+    "file": "t12_s2.png",
+    "prompt": "a poster of superman",
+    "seed": 39,
+    "concept": "superman",
+    "template_index": 12,
+    "seed_index": 2
+  },
+  {
+    "file": "t13_s0.png",
+    "prompt": "a comic-book panel of superman",
+    "seed": 40,
+    "concept": "superman",
+    "template_index": 13,
+    "seed_index": 0
+  },
+  {
+    "file": "t13_s1.png",
+    "prompt": "a comic-book panel of superman",
+    "seed": 41,
+    "concept": "superman",
+    "template_index": 13,
+    "seed_index": 1
+  },
+  {
+    "file": "t13_s2.png",
+    "prompt": "a comic-book panel of superman",
+    "seed": 42,
+    "concept": "superman",
+    "template_index": 13,
+    "seed_index": 2
+  },
+  {
+    "file": "t14_s0.png",
+    "prompt": "superman centered in the frame",
+    "seed": 43,
+    "concept": "superman",
+    "template_index": 14,
+    "seed_index": 0
+  },
+  {
+    "file": "t14_s1.png",
+    "prompt": "superman centered in the frame",
+    "seed": 44,
+    "concept": "superman",
+    "template_index": 14,
+    "seed_index": 1
+  },
+  {
+    "file": "t14_s2.png",
+    "prompt": "superman centered in the frame",
+    "seed": 45,
+    "concept": "superman",
+    "template_index": 14,
+    "seed_index": 2
+  },
+  {
+    "file": "t15_s0.png",
+    "prompt": "superman in daylight",
+    "seed": 46,
+    "concept": "superman",
+    "template_index": 15,
+    "seed_index": 0
+  },
+  {
+    "file": "t15_s1.png",
+    "prompt": "superman in daylight",
+    "seed": 47,
+    "concept": "superman",
+    "template_index": 15,
+    "seed_index": 1
+  },
+  {
+    "file": "t15_s2.png",
+    "prompt": "superman in daylight",
+    "seed": 48,
+    "concept": "superman",
+    "template_index": 15,
+    "seed_index": 2
+  },
+  {
+    "file": "t16_s0.png",
+    "prompt": "superman at night",
+    "seed": 49,
+    "concept": "superman",
+    "template_index": 16,
+    "seed_index": 0
+  },
+  {
+    "file": "t16_s1.png",
+    "prompt": "superman at night",
+    "seed": 50,
+    "concept": "superman",
+    "template_index": 16,
+    "seed_index": 1
+  },
+  {
+    "file": "t16_s2.png",
+    "prompt": "superman at night",
+    "seed": 51,
+    "concept": "superman",
+    "template_index": 16,
+    "seed_index": 2
+  },
+  {
+    "file": "t17_s0.png",
+    "prompt": "superman in soft lighting",
+    "seed": 52,
+    "concept": "superman",
+    "template_index": 17,
+    "seed_index": 0
+  },
+  {
+    "file": "t17_s1.png",
+    "prompt": "superman in soft lighting",
+    "seed": 53,
+    "concept": "superman",
+    "template_index": 17,
+    "seed_index": 1
+  },
+  {
+    "file": "t17_s2.png",
+    "prompt": "superman in soft lighting",
+    "seed": 54,
+    "concept": "superman",
+    "template_index": 17,
+    "seed_index": 2
+  },
+  {
+    "file": "t18_s0.png",
+    "prompt": "superman in black and white",
+    "seed": 55,
+    "concept": "superman",
+    "template_index": 18,
+    "seed_index": 0
+  },
+  {
+    "file": "t18_s1.png",
+    "prompt": "superman in black and white",
+    "seed": 56,
+    "concept": "superman",
+    "template_index": 18,
+    "seed_index": 1
+  },
+  {
+    "file": "t18_s2.png",
+    "prompt": "superman in black and white",
+    "seed": 57,
+    "concept": "superman",
+    "template_index": 18,
+    "seed_index": 2
+  },
+  {
+    "file": "t19_s0.png",
+    "prompt": "superman \u2014 concept art",
+    "seed": 58,
+    "concept": "superman",
+    "template_index": 19,
+    "seed_index": 0
+  },
+  {
+    "file": "t19_s1.png",
+    "prompt": "superman \u2014 concept art",
+    "seed": 59,
+    "concept": "superman",
+    "template_index": 19,
+    "seed_index": 1
+  },
+  {
+    "file": "t19_s2.png",
+    "prompt": "superman \u2014 concept art",
+    "seed": 60,
+    "concept": "superman",
+    "template_index": 19,
+    "seed_index": 2
+  }
+]

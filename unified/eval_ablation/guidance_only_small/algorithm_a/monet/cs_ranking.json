@@ -1,0 +1,112 @@
+[
+  {
+    "file": "t00_s1.png",
+    "prompt": "a photo of monet",
+    "seed": 2,
+    "concept": "monet",
+    "template_index": 0,
+    "seed_index": 1,
+    "cs": 0.17745134234428406,
+    "rank_high": 10,
+    "rank_low": 1
+  },
+  {
+    "file": "t01_s0.png",
+    "prompt": "a painting of monet",
+    "seed": 3,
+    "concept": "monet",
+    "template_index": 1,
+    "seed_index": 0,
+    "cs": 0.21765372157096863,
+    "rank_high": 9,
+    "rank_low": 2
+  },
+  {
+    "file": "t02_s1.png",
+    "prompt": "an image of monet",
+    "seed": 6,
+    "concept": "monet",
+    "template_index": 2,
+    "seed_index": 1,
+    "cs": 0.22692649066448212,
+    "rank_high": 8,
+    "rank_low": 3
+  },
+  {
+    "file": "t01_s1.png",
+    "prompt": "a painting of monet",
+    "seed": 4,
+    "concept": "monet",
+    "template_index": 1,
+    "seed_index": 1,
+    "cs": 0.23754572868347168,
+    "rank_high": 7,
+    "rank_low": 4
+  },
+  {
+    "file": "t04_s1.png",
+    "prompt": "monet in a dramatic pose",
+    "seed": 10,
+    "concept": "monet",
+    "template_index": 4,
+    "seed_index": 1,
+    "cs": 0.2427583783864975,
+    "rank_high": 6,
+    "rank_low": 5
+  },
+  {
+    "file": "t03_s0.png",
+    "prompt": "monet in a cinematic composition",
+    "seed": 7,
+    "concept": "monet",
+    "template_index": 3,
+    "seed_index": 0,
+    "cs": 0.24489396810531616,
+    "rank_high": 5,
+    "rank_low": 6
+  },
+  {
+    "file": "t00_s0.png",
+    "prompt": "a photo of monet",
+    "seed": 1,
+    "concept": "monet",
+    "template_index": 0,
+    "seed_index": 0,
+    "cs": 0.24703000485897064,
+    "rank_high": 4,
+    "rank_low": 7
+  },
+  {
+    "file": "t02_s0.png",
+    "prompt": "an image of monet",
+    "seed": 5,
+    "concept": "monet",
+    "template_index": 2,
+    "seed_index": 0,
+    "cs": 0.25311189889907837,
+    "rank_high": 3,
+    "rank_low": 8
+  },
+  {
+    "file": "t03_s1.png",
+    "prompt": "monet in a cinematic composition",
+    "seed": 8,
+    "concept": "monet",
+    "template_index": 3,
+    "seed_index": 1,
+    "cs": 0.2546187937259674,
+    "rank_high": 2,
+    "rank_low": 9
+  },
+  {
+    "file": "t04_s0.png",
+    "prompt": "monet in a dramatic pose",
+    "seed": 9,
+    "concept": "monet",
+    "template_index": 4,
+    "seed_index": 0,
+    "cs": 0.2562636733055115,
+    "rank_high": 1,
+    "rank_low": 10
+  }
+]

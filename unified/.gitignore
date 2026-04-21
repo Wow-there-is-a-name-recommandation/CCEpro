@@ -1,8 +1,21 @@
 # Large outputs / generated artifacts
 output/
+output_vangogh/
 eval_output/*/
 eval_output/*_run.log
-qualitative/
+unified/eval_ablation/reference_sd/
+unified/eval_ablation/base_small/algorithm_a
+unified/eval_ablation/base_small/algorithm_a_ablation
+unified/eval_ablation/filter_only_small/algorithm_a
+unified/eval_ablation/filter_only_small/algorithm_a_ablation
+unified/eval_ablation/full_small/algorithm_a
+unified/eval_ablation/full_small/algorithm_a_ablation
+unified/eval_ablation/guidance_only_small/algorithm_a
+unified/eval_ablation/guidance_only_small/algorithm_a_ablation
+unified/report
+unified/eval_output_tiny
+unified/eval_output
+
 
 # LaTeX build artifacts
 report/main.aux

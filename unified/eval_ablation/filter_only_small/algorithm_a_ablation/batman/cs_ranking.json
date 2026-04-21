@@ -1,0 +1,112 @@
+[
+  {
+    "file": "t03_s0.png",
+    "prompt": "batman in a cinematic composition",
+    "seed": 7,
+    "concept": "batman",
+    "template_index": 3,
+    "seed_index": 0,
+    "cs": 0.21900083124637604,
+    "rank_high": 10,
+    "rank_low": 1
+  },
+  {
+    "file": "t02_s0.png",
+    "prompt": "an image of batman",
+    "seed": 5,
+    "concept": "batman",
+    "template_index": 2,
+    "seed_index": 0,
+    "cs": 0.22299234569072723,
+    "rank_high": 9,
+    "rank_low": 2
+  },
+  {
+    "file": "t00_s1.png",
+    "prompt": "a photo of batman",
+    "seed": 2,
+    "concept": "batman",
+    "template_index": 0,
+    "seed_index": 1,
+    "cs": 0.22385041415691376,
+    "rank_high": 8,
+    "rank_low": 3
+  },
+  {
+    "file": "t03_s1.png",
+    "prompt": "batman in a cinematic composition",
+    "seed": 8,
+    "concept": "batman",
+    "template_index": 3,
+    "seed_index": 1,
+    "cs": 0.22505207359790802,
+    "rank_high": 7,
+    "rank_low": 4
+  },
+  {
+    "file": "t00_s0.png",
+    "prompt": "a photo of batman",
+    "seed": 1,
+    "concept": "batman",
+    "template_index": 0,
+    "seed_index": 0,
+    "cs": 0.23170948028564453,
+    "rank_high": 6,
+    "rank_low": 5
+  },
+  {
+    "file": "t04_s0.png",
+    "prompt": "batman in a dramatic pose",
+    "seed": 9,
+    "concept": "batman",
+    "template_index": 4,
+    "seed_index": 0,
+    "cs": 0.23273788392543793,
+    "rank_high": 5,
+    "rank_low": 6
+  },
+  {
+    "file": "t01_s1.png",
+    "prompt": "a painting of batman",
+    "seed": 4,
+    "concept": "batman",
+    "template_index": 1,
+    "seed_index": 1,
+    "cs": 0.23283728957176208,
+    "rank_high": 4,
+    "rank_low": 7
+  },
+  {
+    "file": "t04_s1.png",
+    "prompt": "batman in a dramatic pose",
+    "seed": 10,
+    "concept": "batman",
+    "template_index": 4,
+    "seed_index": 1,
+    "cs": 0.2333461344242096,
+    "rank_high": 3,
+    "rank_low": 8
+  },
+  {
+    "file": "t01_s0.png",
+    "prompt": "a painting of batman",
+    "seed": 3,
+    "concept": "batman",
+    "template_index": 1,
+    "seed_index": 0,
+    "cs": 0.2357659786939621,
+    "rank_high": 2,
+    "rank_low": 9
+  },
+  {
+    "file": "t02_s1.png",
+    "prompt": "an image of batman",
+    "seed": 6,
+    "concept": "batman",
+    "template_index": 2,
+    "seed_index": 1,
+    "cs": 0.2436707764863968,
+    "rank_high": 1,
+    "rank_low": 10
+  }
+]

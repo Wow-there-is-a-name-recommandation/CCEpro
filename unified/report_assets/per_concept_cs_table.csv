@@ -1,0 +1,19 @@
+method,concept,group,CS
+sd_v1.4,superman,target,0.24393314371506372
+sd_v1.4,van gogh,target,0.2592388731737932
+sd_v1.4,snoopy,target,0.24895421291391054
+sd_v1.4,batman,related,0.2358603373169899
+sd_v1.4,thor,related,0.243021422624588
+sd_v1.4,picasso,related,0.2190959256887436
+sd_v1.4,monet,related,0.2466869029402733
+sd_v1.4,mickey,related,0.2379314586520195
+sd_v1.4,pikachu,related,0.245626799762249
+algorithm_a,superman,target,0.1746456862737735
+algorithm_a,van gogh,target,0.1502638891339302
+algorithm_a,snoopy,target,0.14066241756081582
+algorithm_a,batman,related,0.22528790712356567
+algorithm_a,thor,related,0.22739970117807387
+algorithm_a,picasso,related,0.20755528509616852
+algorithm_a,monet,related,0.24056538432836533
+algorithm_a,mickey,related,0.22860830366611481
+algorithm_a,pikachu,related,0.2333388325572014

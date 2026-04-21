@@ -1,28 +1,127 @@
 {
   "method": "algorithm_a",
-  "per_concept_CS": {
-    "superman": 0.21825040876865387,
-    "van gogh": 0.25038859248161316,
-    "snoopy": 0.2000693678855896,
-    "batman": 0.21592958271503448,
-    "thor": 0.2176237255334854,
-    "wonder woman": 0.22770746052265167,
-    "shazam": 0.18053977191448212,
-    "picasso": 0.2040562927722931,
-    "monet": 0.22276024520397186,
-    "paul gauguin": 0.2690909802913666,
-    "caravaggio": 0.20929531753063202,
-    "mickey": 0.20441676676273346,
-    "spongebob": 0.19696426391601562,
-    "pikachu": 0.21137040853500366,
-    "hello kitty": 0.20848676562309265
+  "related_subset": {
+    "superman": [
+      "batman",
+      "thor"
+    ],
+    "van gogh": [
+      "picasso",
+      "monet"
+    ],
+    "snoopy": [
+      "mickey",
+      "pikachu"
+    ]
   },
-  "AVG_e_CS": 0.2229027897119522,
-  "AVG_r_CS": 0.2140201317767302,
-  "coco_CS": 0.2643925303220749,
-  "n_coco": 100,
-  "superman_r_CS_avg": 0.21045013517141342,
-  "van gogh_r_CS_avg": 0.2263007089495659,
-  "snoopy_r_CS_avg": 0.20530955120921135,
-  "coco_FID": 128.7127005036382
+  "per_concept_CS": {
+    "superman": 0.1746456862737735,
+    "van gogh": 0.1502638891339302,
+    "snoopy": 0.14066241756081582,
+    "batman": 0.22528790712356567,
+    "thor": 0.22739970117807387,
+    "picasso": 0.20755528509616852,
+    "monet": 0.24056538432836533,
+    "mickey": 0.22860830366611481,
+    "pikachu": 0.2333388325572014
+  },
+  "per_concept_extremes": {
+    "superman": {
+      "min_cs": 0.10718327015638351,
+      "min_cs_file": "t13_s2.png",
+      "min_cs_prompt": "a comic-book panel of superman",
+      "max_cs": 0.2675740420818329,
+      "max_cs_file": "t14_s2.png",
+      "max_cs_prompt": "superman centered in the frame",
+      "n_images": 60
+    },
+    "van gogh": {
+      "min_cs": 0.08605074882507324,
+      "min_cs_file": "t13_s1.png",
+      "min_cs_prompt": "a comic-book panel of van gogh",
+      "max_cs": 0.22204548120498657,
+      "max_cs_file": "t00_s2.png",
+      "max_cs_prompt": "a photo of van gogh",
+      "n_images": 60
+    },
+    "snoopy": {
+      "min_cs": 0.09512879699468613,
+      "min_cs_file": "t08_s0.png",
+      "min_cs_prompt": "a digital artwork of snoopy",
+      "max_cs": 0.2585676908493042,
+      "max_cs_file": "t18_s1.png",
+      "max_cs_prompt": "snoopy in black and white",
+      "n_images": 60
+    },
+    "batman": {
+      "min_cs": 0.17088963091373444,
+      "min_cs_file": "t05_s1.png",
+      "min_cs_prompt": "batman on a city street",
+      "max_cs": 0.2512902021408081,
+      "max_cs_file": "t02_s3.png",
+      "max_cs_prompt": "an image of batman",
+      "n_images": 50
+    },
+    "thor": {
+      "min_cs": 0.16481083631515503,
+      "min_cs_file": "t09_s0.png",
+      "min_cs_prompt": "a close-up portrait of thor",
+      "max_cs": 0.25930026173591614,
+      "max_cs_file": "t03_s4.png",
+      "max_cs_prompt": "thor in a cinematic composition",
+      "n_images": 50
+    },
+    "picasso": {
+      "min_cs": 0.1689065545797348,
+      "min_cs_file": "t00_s0.png",
+      "min_cs_prompt": "a photo of picasso",
+      "max_cs": 0.23899099230766296,
+      "max_cs_file": "t08_s3.png",
+      "max_cs_prompt": "a digital artwork of picasso",
+      "n_images": 50
+    },
+    "monet": {
+      "min_cs": 0.1760210245847702,
+      "min_cs_file": "t09_s3.png",
+      "min_cs_prompt": "a close-up portrait of monet",
+      "max_cs": 0.2762679159641266,
+      "max_cs_file": "t05_s4.png",
+      "max_cs_prompt": "monet on a city street",
+      "n_images": 50
+    },
+    "mickey": {
+      "min_cs": 0.13525070250034332,
+      "min_cs_file": "t09_s1.png",
+      "min_cs_prompt": "a close-up portrait of mickey",
+      "max_cs": 0.2525564432144165,
+      "max_cs_file": "t00_s2.png",
+      "max_cs_prompt": "a photo of mickey",
+      "n_images": 50
+    },
+    "pikachu": {
+      "min_cs": 0.15327872335910797,
+      "min_cs_file": "t09_s2.png",
+      "min_cs_prompt": "a close-up portrait of pikachu",
+      "max_cs": 0.2645935118198395,
+      "max_cs_file": "t03_s0.png",
+      "max_cs_prompt": "pikachu in a cinematic composition",
+      "n_images": 50
+    }
+  },
+  "AVG_e_CS": 0.15519066432283984,
+  "AVG_r_CS": 0.22712590232491495,
+  "coco_CS": 0.255885209441185,
+  "coco_extremes": {
+    "min_cs": 0.20551635324954987,
+    "min_cs_file": "c018.png",
+    "min_cs_prompt": "a bus parked at a stop with passengers boarding",
+    "max_cs": 0.2966477870941162,
+    "max_cs_file": "c020.png",
+    "max_cs_prompt": "a kid eating an ice cream cone on a sunny day",
+    "n_images": 50
+  },
+  "superman_r_CS_avg": 0.22634380415081978,
+  "van gogh_r_CS_avg": 0.22406033471226694,
+  "snoopy_r_CS_avg": 0.2309735681116581,
+  "coco_FID": 150.05159901425372
 }

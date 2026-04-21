@@ -1,0 +1,402 @@
+[
+  {
+    "file": "t00_s0.png",
+    "prompt": "a photo of thor",
+    "seed": 1,
+    "concept": "thor",
+    "template_index": 0,
+    "seed_index": 0
+  },
+  {
+    "file": "t00_s1.png",
+    "prompt": "a photo of thor",
+    "seed": 2,
+    "concept": "thor",
+    "template_index": 0,
+    "seed_index": 1
+  },
+  {
+    "file": "t00_s2.png",
+    "prompt": "a photo of thor",
+    "seed": 3,
+    "concept": "thor",
+    "template_index": 0,
+    "seed_index": 2
+  },
+  {
+    "file": "t00_s3.png",
+    "prompt": "a photo of thor",
+    "seed": 4,
+    "concept": "thor",
+    "template_index": 0,
+    "seed_index": 3
+  },
+  {
+    "file": "t00_s4.png",
+    "prompt": "a photo of thor",
+    "seed": 5,
+    "concept": "thor",
+    "template_index": 0,
+    "seed_index": 4
+  },
+  {
+    "file": "t01_s0.png",
+    "prompt": "a painting of thor",
+    "seed": 6,
+    "concept": "thor",
+    "template_index": 1,
+    "seed_index": 0
+  },
+  {
+    "file": "t01_s1.png",
+    "prompt": "a painting of thor",
+    "seed": 7,
+    "concept": "thor",
+    "template_index": 1,
+    "seed_index": 1
+  },
+  {
+    "file": "t01_s2.png",
+    "prompt": "a painting of thor",
+    "seed": 8,
+    "concept": "thor",
+    "template_index": 1,
+    "seed_index": 2
+  },
+  {
+    "file": "t01_s3.png",
+    "prompt": "a painting of thor",
+    "seed": 9,
+    "concept": "thor",
+    "template_index": 1,
+    "seed_index": 3
+  },
+  {
+    "file": "t01_s4.png",
+    "prompt": "a painting of thor",
+    "seed": 10,
+    "concept": "thor",
+    "template_index": 1,
+    "seed_index": 4
+  },
+  {
+    "file": "t02_s0.png",
+    "prompt": "an image of thor",
+    "seed": 11,
+    "concept": "thor",
+    "template_index": 2,
+    "seed_index": 0
+  },
+  {
+    "file": "t02_s1.png",
+    "prompt": "an image of thor",
+    "seed": 12,
+    "concept": "thor",
+    "template_index": 2,
+    "seed_index": 1
+  },
+  {
+    "file": "t02_s2.png",
+    "prompt": "an image of thor",
+    "seed": 13,
+    "concept": "thor",
+    "template_index": 2,
+    "seed_index": 2
+  },
+  {
+    "file": "t02_s3.png",
+    "prompt": "an image of thor",
+    "seed": 14,
+    "concept": "thor",
+    "template_index": 2,
+    "seed_index": 3
+  },
+  {
+    "file": "t02_s4.png",
+    "prompt": "an image of thor",
+    "seed": 15,
+    "concept": "thor",
+    "template_index": 2,
+    "seed_index": 4
+  },
+  {
+    "file": "t03_s0.png",
+    "prompt": "thor in a cinematic composition",
+    "seed": 16,
+    "concept": "thor",
+    "template_index": 3,
+    "seed_index": 0
+  },
+  {
+    "file": "t03_s1.png",
+    "prompt": "thor in a cinematic composition",
+    "seed": 17,
+    "concept": "thor",
+    "template_index": 3,
+    "seed_index": 1
+  },
+  {
+    "file": "t03_s2.png",
+    "prompt": "thor in a cinematic composition",
+    "seed": 18,
+    "concept": "thor",
+    "template_index": 3,
+    "seed_index": 2
+  },
+  {
+    "file": "t03_s3.png",
+    "prompt": "thor in a cinematic composition",
+    "seed": 19,
+    "concept": "thor",
+    "template_index": 3,
+    "seed_index": 3
+  },
+  {
+    "file": "t03_s4.png",
+    "prompt": "thor in a cinematic composition",
+    "seed": 20,
+    "concept": "thor",
+    "template_index": 3,
+    "seed_index": 4
+  },
+  {
+    "file": "t04_s0.png",
+    "prompt": "thor in a dramatic pose",
+    "seed": 21,
+    "concept": "thor",
+    "template_index": 4,
+    "seed_index": 0
+  },
+  {
+    "file": "t04_s1.png",
+    "prompt": "thor in a dramatic pose",
+    "seed": 22,
+    "concept": "thor",
+    "template_index": 4,
+    "seed_index": 1
+  },
+  {
+    "file": "t04_s2.png",
+    "prompt": "thor in a dramatic pose",
+    "seed": 23,
+    "concept": "thor",
+    "template_index": 4,
+    "seed_index": 2
+  },
+  {
+    "file": "t04_s3.png",
+    "prompt": "thor in a dramatic pose",
+    "seed": 24,
+    "concept": "thor",
+    "template_index": 4,
+    "seed_index": 3
+  },
+  {
+    "file": "t04_s4.png",
+    "prompt": "thor in a dramatic pose",
+    "seed": 25,
+    "concept": "thor",
+    "template_index": 4,
+    "seed_index": 4
+  },
+  {
+    "file": "t05_s0.png",
+    "prompt": "thor on a city street",
+    "seed": 26,
+    "concept": "thor",
+    "template_index": 5,
+    "seed_index": 0
+  },
+  {
+    "file": "t05_s1.png",
+    "prompt": "thor on a city street",
+    "seed": 27,
+    "concept": "thor",
+    "template_index": 5,
+    "seed_index": 1
+  },
+  {
+    "file": "t05_s2.png",
+    "prompt": "thor on a city street",
+    "seed": 28,
+    "concept": "thor",
+    "template_index": 5,
+    "seed_index": 2
+  },
+  {
+    "file": "t05_s3.png",
+    "prompt": "thor on a city street",
+    "seed": 29,
+    "concept": "thor",
+    "template_index": 5,
+    "seed_index": 3
+  },
+  {
+    "file": "t05_s4.png",
+    "prompt": "thor on a city street",
+    "seed": 30,
+    "concept": "thor",
+    "template_index": 5,
+    "seed_index": 4
+  },
+  {
+    "file": "t06_s0.png",
+    "prompt": "a detailed illustration of thor",
+    "seed": 31,
+    "concept": "thor",
+    "template_index": 6,
+    "seed_index": 0
+  },
+  {
+    "file": "t06_s1.png",
+    "prompt": "a detailed illustration of thor",
+    "seed": 32,
+    "concept": "thor",
+    "template_index": 6,
+    "seed_index": 1
+  },
+  {
+    "file": "t06_s2.png",
+    "prompt": "a detailed illustration of thor",
+    "seed": 33,
+    "concept": "thor",
+    "template_index": 6,
+    "seed_index": 2
+  },
+  {
+    "file": "t06_s3.png",
+    "prompt": "a detailed illustration of thor",
+    "seed": 34,
+    "concept": "thor",
+    "template_index": 6,
+    "seed_index": 3
+  },
+  {
+    "file": "t06_s4.png",
+    "prompt": "a detailed illustration of thor",
+    "seed": 35,
+    "concept": "thor",
+    "template_index": 6,
+    "seed_index": 4
+  },
+  {
+    "file": "t07_s0.png",
+    "prompt": "thor with stylized shading",
+    "seed": 36,
+    "concept": "thor",
+    "template_index": 7,
+    "seed_index": 0
+  },
+  {
+    "file": "t07_s1.png",
+    "prompt": "thor with stylized shading",
+    "seed": 37,
+    "concept": "thor",
+    "template_index": 7,
+    "seed_index": 1
+  },
+  {
+    "file": "t07_s2.png",
+    "prompt": "thor with stylized shading",
+    "seed": 38,
+    "concept": "thor",
+    "template_index": 7,
+    "seed_index": 2
+  },
+  {
+    "file": "t07_s3.png",
+    "prompt": "thor with stylized shading",
+    "seed": 39,
+    "concept": "thor",
+    "template_index": 7,
+    "seed_index": 3
+  },
+  {
+    "file": "t07_s4.png",
+    "prompt": "thor with stylized shading",
+    "seed": 40,
+    "concept": "thor",
+    "template_index": 7,
+    "seed_index": 4
+  },
+  {
+    "file": "t08_s0.png",
+    "prompt": "a digital artwork of thor",
+    "seed": 41,
+    "concept": "thor",
+    "template_index": 8,
+    "seed_index": 0
+  },
+  {
+    "file": "t08_s1.png",
+    "prompt": "a digital artwork of thor",
+    "seed": 42,
+    "concept": "thor",
+    "template_index": 8,
+    "seed_index": 1
+  },
+  {
+    "file": "t08_s2.png",
+    "prompt": "a digital artwork of thor",
+    "seed": 43,
+    "concept": "thor",
+    "template_index": 8,
+    "seed_index": 2
+  },
+  {
+    "file": "t08_s3.png",
+    "prompt": "a digital artwork of thor",
+    "seed": 44,
+    "concept": "thor",
+    "template_index": 8,
+    "seed_index": 3
+  },
+  {
+    "file": "t08_s4.png",
+    "prompt": "a digital artwork of thor",
+    "seed": 45,
+    "concept": "thor",
+    "template_index": 8,
+    "seed_index": 4
+  },
+  {
+    "file": "t09_s0.png",
+    "prompt": "a close-up portrait of thor",
+    "seed": 46,
+    "concept": "thor",
+    "template_index": 9,
+    "seed_index": 0
+  },
+  {
+    "file": "t09_s1.png",
+    "prompt": "a close-up portrait of thor",
+    "seed": 47,
+    "concept": "thor",
+    "template_index": 9,
+    "seed_index": 1
+  },
+  {
+    "file": "t09_s2.png",
+    "prompt": "a close-up portrait of thor",
+    "seed": 48,
+    "concept": "thor",
+    "template_index": 9,
+    "seed_index": 2
+  },
+  {
+    "file": "t09_s3.png",
+    "prompt": "a close-up portrait of thor",
+    "seed": 49,
+    "concept": "thor",
+    "template_index": 9,
+    "seed_index": 3
+  },
+  {
+    "file": "t09_s4.png",
+    "prompt": "a close-up portrait of thor",
+    "seed": 50,
+    "concept": "thor",
+    "template_index": 9,
+    "seed_index": 4
+  }
+]

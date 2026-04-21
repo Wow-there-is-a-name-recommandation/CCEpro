@@ -1,0 +1,222 @@
+[
+  {
+    "file": "t07_s0.png",
+    "prompt": "snoopy with stylized shading",
+    "seed": 15,
+    "concept": "snoopy",
+    "template_index": 7,
+    "seed_index": 0,
+    "cs": 0.09477204829454422,
+    "rank_high": 20,
+    "rank_low": 1
+  },
+  {
+    "file": "t07_s1.png",
+    "prompt": "snoopy with stylized shading",
+    "seed": 16,
+    "concept": "snoopy",
+    "template_index": 7,
+    "seed_index": 1,
+    "cs": 0.1052902564406395,
+    "rank_high": 19,
+    "rank_low": 2
+  },
+  {
+    "file": "t06_s0.png",
+    "prompt": "a detailed illustration of snoopy",
+    "seed": 13,
+    "concept": "snoopy",
+    "template_index": 6,
+    "seed_index": 0,
+    "cs": 0.11558908969163895,
+    "rank_high": 18,
+    "rank_low": 3
+  },
+  {
+    "file": "t08_s1.png",
+    "prompt": "a digital artwork of snoopy",
+    "seed": 18,
+    "concept": "snoopy",
+    "template_index": 8,
+    "seed_index": 1,
+    "cs": 0.11739006638526917,
+    "rank_high": 17,
+    "rank_low": 4
+  },
+  {
+    "file": "t09_s1.png",
+    "prompt": "a close-up portrait of snoopy",
+    "seed": 20,
+    "concept": "snoopy",
+    "template_index": 9,
+    "seed_index": 1,
+    "cs": 0.1193297803401947,
+    "rank_high": 16,
+    "rank_low": 5
+  },
+  {
+    "file": "t06_s1.png",
+    "prompt": "a detailed illustration of snoopy",
+    "seed": 14,
+    "concept": "snoopy",
+    "template_index": 6,
+    "seed_index": 1,
+    "cs": 0.12019608914852142,
+    "rank_high": 15,
+    "rank_low": 6
+  },
+  {
+    "file": "t09_s0.png",
+    "prompt": "a close-up portrait of snoopy",
+    "seed": 19,
+    "concept": "snoopy",
+    "template_index": 9,
+    "seed_index": 0,
+    "cs": 0.12694115936756134,
+    "rank_high": 14,
+    "rank_low": 7
+  },
+  {
+    "file": "t00_s0.png",
+    "prompt": "a photo of snoopy",
+    "seed": 1,
+    "concept": "snoopy",
+    "template_index": 0,
+    "seed_index": 0,
+    "cs": 0.12921947240829468,
+    "rank_high": 13,
+    "rank_low": 8
+  },
+  {
+    "file": "t08_s0.png",
+    "prompt": "a digital artwork of snoopy",
+    "seed": 17,
+    "concept": "snoopy",
+    "template_index": 8,
+    "seed_index": 0,
+    "cs": 0.13127101957798004,
+    "rank_high": 12,
+    "rank_low": 9
+  },
+  {
+    "file": "t05_s0.png",
+    "prompt": "snoopy on a city street",
+    "seed": 11,
+    "concept": "snoopy",
+    "template_index": 5,
+    "seed_index": 0,
+    "cs": 0.1316894292831421,
+    "rank_high": 11,
+    "rank_low": 10
+  },
+  {
+    "file": "t04_s1.png",
+    "prompt": "snoopy in a dramatic pose",
+    "seed": 10,
+    "concept": "snoopy",
+    "template_index": 4,
+    "seed_index": 1,
+    "cs": 0.13688494265079498,
+    "rank_high": 10,
+    "rank_low": 11
+  },
+  {
+    "file": "t02_s0.png",
+    "prompt": "an image of snoopy",
+    "seed": 5,
+    "concept": "snoopy",
+    "template_index": 2,
+    "seed_index": 0,
+    "cs": 0.13871097564697266,
+    "rank_high": 9,
+    "rank_low": 12
+  },
+  {
+    "file": "t04_s0.png",
+    "prompt": "snoopy in a dramatic pose",
+    "seed": 9,
+    "concept": "snoopy",
+    "template_index": 4,
+    "seed_index": 0,
+    "cs": 0.14169219136238098,
+    "rank_high": 8,
+    "rank_low": 13
+  },
+  {
+    "file": "t01_s1.png",
+    "prompt": "a painting of snoopy",
+    "seed": 4,
+    "concept": "snoopy",
+    "template_index": 1,
+    "seed_index": 1,
+    "cs": 0.1426086276769638,
+    "rank_high": 7,
+    "rank_low": 14
+  },
+  {
+    "file": "t02_s1.png",
+    "prompt": "an image of snoopy",
+    "seed": 6,
+    "concept": "snoopy",
+    "template_index": 2,
+    "seed_index": 1,
+    "cs": 0.14298439025878906,
+    "rank_high": 6,
+    "rank_low": 15
+  },
+  {
+    "file": "t05_s1.png",
+    "prompt": "snoopy on a city street",
+    "seed": 12,
+    "concept": "snoopy",
+    "template_index": 5,
+    "seed_index": 1,
+    "cs": 0.14569206535816193,
+    "rank_high": 5,
+    "rank_low": 16
+  },
+  {
+    "file": "t01_s0.png",
+    "prompt": "a painting of snoopy",
+    "seed": 3,
+    "concept": "snoopy",
+    "template_index": 1,
+    "seed_index": 0,
+    "cs": 0.15194867551326752,
+    "rank_high": 4,
+    "rank_low": 17
+  },
+  {
+    "file": "t00_s1.png",
+    "prompt": "a photo of snoopy",
+    "seed": 2,
+    "concept": "snoopy",
+    "template_index": 0,
+    "seed_index": 1,
+    "cs": 0.15371012687683105,
+    "rank_high": 3,
+    "rank_low": 18
+  },
+  {
+    "file": "t03_s0.png",
+    "prompt": "snoopy in a cinematic composition",
+    "seed": 7,
+    "concept": "snoopy",
+    "template_index": 3,
+    "seed_index": 0,
+    "cs": 0.22159087657928467,
+    "rank_high": 2,
+    "rank_low": 19
+  },
+  {
+    "file": "t03_s1.png",
+    "prompt": "snoopy in a cinematic composition",
+    "seed": 8,
+    "concept": "snoopy",
+    "template_index": 3,
+    "seed_index": 1,
+    "cs": 0.233803853392601,
+    "rank_high": 1,
+    "rank_low": 20
+  }
+]

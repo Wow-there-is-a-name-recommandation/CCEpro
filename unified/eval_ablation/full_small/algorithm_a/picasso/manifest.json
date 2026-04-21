@@ -1,0 +1,82 @@
+[
+  {
+    "file": "t00_s0.png",
+    "prompt": "a photo of picasso",
+    "seed": 1,
+    "concept": "picasso",
+    "template_index": 0,
+    "seed_index": 0
+  },
+  {
+    "file": "t00_s1.png",
+    "prompt": "a photo of picasso",
+    "seed": 2,
+    "concept": "picasso",
+    "template_index": 0,
+    "seed_index": 1
+  },
+  {
+    "file": "t01_s0.png",
+    "prompt": "a painting of picasso",
+    "seed": 3,
+    "concept": "picasso",
+    "template_index": 1,
+    "seed_index": 0
+  },
+  {
+    "file": "t01_s1.png",
+    "prompt": "a painting of picasso",
+    "seed": 4,
+    "concept": "picasso",
+    "template_index": 1,
+    "seed_index": 1
+  },
+  {
+    "file": "t02_s0.png",
+    "prompt": "an image of picasso",
+    "seed": 5,
+    "concept": "picasso",
+    "template_index": 2,
+    "seed_index": 0
+  },
+  {
+    "file": "t02_s1.png",
+    "prompt": "an image of picasso",
+    "seed": 6,
+    "concept": "picasso",
+    "template_index": 2,
+    "seed_index": 1
+  },
+  {
+    "file": "t03_s0.png",
+    "prompt": "picasso in a cinematic composition",
+    "seed": 7,
+    "concept": "picasso",
+    "template_index": 3,
+    "seed_index": 0
+  },
+  {
+    "file": "t03_s1.png",
+    "prompt": "picasso in a cinematic composition",
+    "seed": 8,
+    "concept": "picasso",
+    "template_index": 3,
+    "seed_index": 1
+  },
+  {
+    "file": "t04_s0.png",
+    "prompt": "picasso in a dramatic pose",
+    "seed": 9,
+    "concept": "picasso",
+    "template_index": 4,
+    "seed_index": 0
+  },
+  {
+    "file": "t04_s1.png",
+    "prompt": "picasso in a dramatic pose",
+    "seed": 10,
+    "concept": "picasso",
+    "template_index": 4,
+    "seed_index": 1
+  }
+]

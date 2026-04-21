@@ -1,0 +1,127 @@
+{
+  "method": "algorithm_a_ablation",
+  "related_subset": {
+    "superman": [
+      "batman",
+      "thor"
+    ],
+    "van gogh": [
+      "picasso",
+      "monet"
+    ],
+    "snoopy": [
+      "mickey",
+      "pikachu"
+    ]
+  },
+  "per_concept_CS": {
+    "superman": 0.2348160058259964,
+    "van gogh": 0.24733056947588922,
+    "snoopy": 0.23250349387526512,
+    "batman": 0.2300963208079338,
+    "thor": 0.22305921018123626,
+    "picasso": 0.1997647300362587,
+    "monet": 0.2358254000544548,
+    "mickey": 0.23502253741025925,
+    "pikachu": 0.22944892942905426
+  },
+  "per_concept_extremes": {
+    "superman": {
+      "min_cs": 0.18463309109210968,
+      "min_cs_file": "t00_s0.png",
+      "min_cs_prompt": "a photo of superman",
+      "max_cs": 0.2624964118003845,
+      "max_cs_file": "t02_s1.png",
+      "max_cs_prompt": "an image of superman",
+      "n_images": 20
+    },
+    "van gogh": {
+      "min_cs": 0.18003547191619873,
+      "min_cs_file": "t06_s1.png",
+      "min_cs_prompt": "a detailed illustration of van gogh",
+      "max_cs": 0.2770478427410126,
+      "max_cs_file": "t02_s1.png",
+      "max_cs_prompt": "an image of van gogh",
+      "n_images": 20
+    },
+    "snoopy": {
+      "min_cs": 0.16308017075061798,
+      "min_cs_file": "t09_s0.png",
+      "min_cs_prompt": "a close-up portrait of snoopy",
+      "max_cs": 0.2667958736419678,
+      "max_cs_file": "t07_s1.png",
+      "max_cs_prompt": "snoopy with stylized shading",
+      "n_images": 20
+    },
+    "batman": {
+      "min_cs": 0.21900083124637604,
+      "min_cs_file": "t03_s0.png",
+      "min_cs_prompt": "batman in a cinematic composition",
+      "max_cs": 0.2436707764863968,
+      "max_cs_file": "t02_s1.png",
+      "max_cs_prompt": "an image of batman",
+      "n_images": 10
+    },
+    "thor": {
+      "min_cs": 0.16185849905014038,
+      "min_cs_file": "t04_s0.png",
+      "min_cs_prompt": "thor in a dramatic pose",
+      "max_cs": 0.25387880206108093,
+      "max_cs_file": "t03_s1.png",
+      "max_cs_prompt": "thor in a cinematic composition",
+      "n_images": 10
+    },
+    "picasso": {
+      "min_cs": 0.1689065545797348,
+      "min_cs_file": "t00_s0.png",
+      "min_cs_prompt": "a photo of picasso",
+      "max_cs": 0.21822170913219452,
+      "max_cs_file": "t00_s1.png",
+      "max_cs_prompt": "a photo of picasso",
+      "n_images": 10
+    },
+    "monet": {
+      "min_cs": 0.17745134234428406,
+      "min_cs_file": "t00_s1.png",
+      "min_cs_prompt": "a photo of monet",
+      "max_cs": 0.2562636733055115,
+      "max_cs_file": "t04_s0.png",
+      "max_cs_prompt": "monet in a dramatic pose",
+      "n_images": 10
+    },
+    "mickey": {
+      "min_cs": 0.21082629263401031,
+      "min_cs_file": "t03_s0.png",
+      "min_cs_prompt": "mickey in a cinematic composition",
+      "max_cs": 0.2505168914794922,
+      "max_cs_file": "t02_s1.png",
+      "max_cs_prompt": "an image of mickey",
+      "n_images": 10
+    },
+    "pikachu": {
+      "min_cs": 0.20340871810913086,
+      "min_cs_file": "t03_s0.png",
+      "min_cs_prompt": "pikachu in a cinematic composition",
+      "max_cs": 0.25473225116729736,
+      "max_cs_file": "t02_s0.png",
+      "max_cs_prompt": "an image of pikachu",
+      "n_images": 10
+    }
+  },
+  "AVG_e_CS": 0.23821668972571694,
+  "AVG_r_CS": 0.22553618798653285,
+  "coco_CS": 0.253426031768322,
+  "coco_extremes": {
+    "min_cs": 0.20551635324954987,
+    "min_cs_file": "c018.png",
+    "min_cs_prompt": "a bus parked at a stop with passengers boarding",
+    "max_cs": 0.29372087121009827,
+    "max_cs_file": "c001.png",
+    "max_cs_prompt": "two children playing with a kite on a grassy field",
+    "n_images": 20
+  },
+  "superman_r_CS_avg": 0.22657776549458503,
+  "van gogh_r_CS_avg": 0.21779506504535673,
+  "snoopy_r_CS_avg": 0.23223573341965675,
+  "coco_FID": 240.69524962604078
+}

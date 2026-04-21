@@ -345,20 +345,17 @@ def make_generator(method: str, device: str, extra_args: dict) -> Callable[[str,
             return pipe.generate(prompt, seed=seed)
         return gen
 
-    if method == "algorithm_b":
-        from diffusers import DDIMScheduler, StableDiffusionPipeline
-        pipe = StableDiffusionPipeline.from_pretrained(
-            extra_args.get("path", "unified/output/algB"),
-            torch_dtype=torch.float32, safety_checker=None,
-        ).to(device)
-        pipe.scheduler = DDIMScheduler.from_config(pipe.scheduler.config)
+    if method == "algorithm_a_ablation":
+        from unified.src.algorithm_a_ablation import AlgorithmAPipeline, AlgAConfig
+
+        _alg_kwargs = {k: v for k, v in (extra_args or {}).items()
+                    if k not in ("edited_pipe", "spm_dir", "path")}
+        cfg = AlgAConfig(**_alg_kwargs) if _alg_kwargs else AlgAConfig()
+        pipe = AlgorithmAPipeline(device=device, config=cfg)
 
         @torch.no_grad()
         def gen(prompt: str, seed: int) -> torch.Tensor:
-            g = torch.Generator(device=device).manual_seed(seed)
-            out = pipe(prompt, num_inference_steps=30, guidance_scale=7.5,
-                       generator=g, output_type="pt")
-            return out.images
+            return pipe.generate(prompt, seed=seed)
         return gen
 
     if method == "cosa_gba":

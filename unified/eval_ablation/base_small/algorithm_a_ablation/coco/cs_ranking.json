@@ -1,0 +1,182 @@
+[
+  {
+    "file": "c018.png",
+    "prompt": "a bus parked at a stop with passengers boarding",
+    "seed": 19,
+    "prompt_index": 18,
+    "cs": 0.20483969151973724,
+    "rank_high": 20,
+    "rank_low": 1
+  },
+  {
+    "file": "c003.png",
+    "prompt": "a brown horse grazing in a sunny pasture",
+    "seed": 4,
+    "prompt_index": 3,
+    "cs": 0.22069428861141205,
+    "rank_high": 19,
+    "rank_low": 2
+  },
+  {
+    "file": "c007.png",
+    "prompt": "a red car parked next to a lamppost",
+    "seed": 8,
+    "prompt_index": 7,
+    "cs": 0.22193002700805664,
+    "rank_high": 18,
+    "rank_low": 3
+  },
+  {
+    "file": "c005.png",
+    "prompt": "a woman typing on a laptop in a coffee shop",
+    "seed": 6,
+    "prompt_index": 5,
+    "cs": 0.2229062020778656,
+    "rank_high": 17,
+    "rank_low": 4
+  },
+  {
+    "file": "c015.png",
+    "prompt": "a crowded subway station during rush hour",
+    "seed": 16,
+    "prompt_index": 15,
+    "cs": 0.23575621843338013,
+    "rank_high": 16,
+    "rank_low": 5
+  },
+  {
+    "file": "c016.png",
+    "prompt": "a stack of books on a wooden shelf",
+    "seed": 17,
+    "prompt_index": 16,
+    "cs": 0.2443036288022995,
+    "rank_high": 15,
+    "rank_low": 6
+  },
+  {
+    "file": "c000.png",
+    "prompt": "a man riding a bicycle down a city street",
+    "seed": 1,
+    "prompt_index": 0,
+    "cs": 0.2460622489452362,
+    "rank_high": 14,
+    "rank_low": 7
+  },
+  {
+    "file": "c009.png",
+    "prompt": "a sailboat on a calm lake at sunset",
+    "seed": 10,
+    "prompt_index": 9,
+    "cs": 0.246748685836792,
+    "rank_high": 13,
+    "rank_low": 8
+  },
+  {
+    "file": "c013.png",
+    "prompt": "a bowl of soup on a wooden dining table",
+    "seed": 14,
+    "prompt_index": 13,
+    "cs": 0.2475435584783554,
+    "rank_high": 12,
+    "rank_low": 9
+  },
+  {
+    "file": "c010.png",
+    "prompt": "a group of hikers walking on a mountain trail",
+    "seed": 11,
+    "prompt_index": 10,
+    "cs": 0.2510692775249481,
+    "rank_high": 11,
+    "rank_low": 10
+  },
+  {
+    "file": "c004.png",
+    "prompt": "a yellow taxi driving past a skyscraper",
+    "seed": 5,
+    "prompt_index": 4,
+    "cs": 0.2549775540828705,
+    "rank_high": 10,
+    "rank_low": 11
+  },
+  {
+    "file": "c002.png",
+    "prompt": "a plate of pasta with tomato sauce on a wooden table",
+    "seed": 3,
+    "prompt_index": 2,
+    "cs": 0.2556162178516388,
+    "rank_high": 9,
+    "rank_low": 12
+  },
+  {
+    "file": "c019.png",
+    "prompt": "a baseball player swinging a bat at home plate",
+    "seed": 20,
+    "prompt_index": 19,
+    "cs": 0.2640838027000427,
+    "rank_high": 8,
+    "rank_low": 13
+  },
+  {
+    "file": "c008.png",
+    "prompt": "a chef arranging sushi on a plate",
+    "seed": 9,
+    "prompt_index": 8,
+    "cs": 0.2662449777126312,
+    "rank_high": 7,
+    "rank_low": 14
+  },
+  {
+    "file": "c006.png",
+    "prompt": "a golden retriever sitting on a porch",
+    "seed": 7,
+    "prompt_index": 6,
+    "cs": 0.2733761668205261,
+    "rank_high": 6,
+    "rank_low": 15
+  },
+  {
+    "file": "c017.png",
+    "prompt": "a bicycle leaning against a brick wall",
+    "seed": 18,
+    "prompt_index": 17,
+    "cs": 0.27673688530921936,
+    "rank_high": 5,
+    "rank_low": 16
+  },
+  {
+    "file": "c014.png",
+    "prompt": "a couple walking hand in hand on a beach",
+    "seed": 15,
+    "prompt_index": 14,
+    "cs": 0.27840113639831543,
+    "rank_high": 4,
+    "rank_low": 17
+  },
+  {
+    "file": "c012.png",
+    "prompt": "a vase of flowers on a kitchen counter",
+    "seed": 13,
+    "prompt_index": 12,
+    "cs": 0.28912171721458435,
+    "rank_high": 3,
+    "rank_low": 18
+  },
+  {
+    "file": "c001.png",
+    "prompt": "two children playing with a kite on a grassy field",
+    "seed": 2,
+    "prompt_index": 1,
+    "cs": 0.2942877411842346,
+    "rank_high": 2,
+    "rank_low": 19
+  },
+  {
+    "file": "c011.png",
+    "prompt": "a cat sleeping on a patterned rug",
+    "seed": 12,
+    "prompt_index": 11,
+    "cs": 0.3060929775238037,
+    "rank_high": 1,
+    "rank_low": 20
+  }
+]

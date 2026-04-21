@@ -1,0 +1,5 @@
+Setting,Filter,Reverse Guidance,AVG_e_CS,AVG_r_CS,coco_CS,coco_FID,summary_path
+Base,Off,Off,0.23965777009725572,0.2258502811193466,0.2550396502017975,235.79614450529425,unified/eval_ablation/base_small/algorithm_a_ablation_summary.json
+Filter only,On,Off,0.23821668972571694,0.22553618798653285,0.253426031768322,240.69524962604078,unified/eval_ablation/filter_only_small/algorithm_a_ablation_summary.json
+Guidance only,Off,On,0.1658654616524776,0.2258502811193466,0.2550396502017975,235.79614450529425,unified/eval_ablation/guidance_only_small/algorithm_a_ablation_summary.json
+Full,On,On,0.16143946026762326,0.22553618798653285,0.253426031768322,240.69524962604078,unified/eval_ablation/full_small/algorithm_a_ablation_summary.json

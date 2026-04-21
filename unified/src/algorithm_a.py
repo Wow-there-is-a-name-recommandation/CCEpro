@@ -71,28 +71,28 @@ class ConceptMemory:
 
 @dataclass
 class AlgAConfig:
+    # Layer toggles for ablation
+    enable_filter: bool = True
+    enable_reverse_guidance: bool = True
+
     # Layer 1 — prompt filtering
-    alpha_proj: float = 10.0          # subspace-projection ramp steepness
+    alpha_proj: float = 10.0
 
     # Base diffusion / CFG
-    cfg: float = 2.5                  # classifier-free guidance scale
-    n_steps: int = 100                 # DDIM steps
+    cfg: float = 2.5
+    n_steps: int = 100
     image_size: int = 512
 
-    # Prompt-level gate (Algorithm A specific; NOT paper warm-up)
-    score_gate: float = 0.4           # below this concept score, no reverse guidance
-    #gate_scale: float = 1.0           # optional extra gain on aggregated prompt gate
+    # Prompt-level gate
+    score_gate: float = 0.4
 
     # Paper-aligned SLD params
-    safety_scale: float = 500.0      # s_S, paper recommends roughly [100, 3000]
-    safety_threshold: float = 0.01    # λ, paper recommends roughly [0.0, 0.03]
-    warmup_steps: int = 10            # τ, paper recommends roughly [5, 20]
-    momentum_scale: float = 0.3       # s_m, paper recommends [0, 0.5]
-    momentum_beta: float = 0.4        # β_m, paper recommends [0.3, 0.7]
+    safety_scale: float = 500.0
+    safety_threshold: float = 0.01
+    warmup_steps: int = 10
+    momentum_scale: float = 0.3
+    momentum_beta: float = 0.4
 
-    # Stability helpers
-    #clip_mu_to_one: bool = True       # match paper intuition: clip scaling factor
-    #max_gate_eff: float | None = None # optionally cap aggregated prompt-level gate
     debug_steps: bool = True
 
 

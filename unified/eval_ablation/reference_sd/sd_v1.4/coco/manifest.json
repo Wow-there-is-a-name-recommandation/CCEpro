@@ -1,0 +1,62 @@
+[
+  {
+    "file": "c000.png",
+    "prompt": "a man riding a bicycle down a city street",
+    "seed": 1,
+    "prompt_index": 0
+  },
+  {
+    "file": "c001.png",
+    "prompt": "two children playing with a kite on a grassy field",
+    "seed": 2,
+    "prompt_index": 1
+  },
+  {
+    "file": "c002.png",
+    "prompt": "a plate of pasta with tomato sauce on a wooden table",
+    "seed": 3,
+    "prompt_index": 2
+  },
+  {
+    "file": "c003.png",
+    "prompt": "a brown horse grazing in a sunny pasture",
+    "seed": 4,
+    "prompt_index": 3
+  },
+  {
+    "file": "c004.png",
+    "prompt": "a yellow taxi driving past a skyscraper",
+    "seed": 5,
+    "prompt_index": 4
+  },
+  {
+    "file": "c005.png",
+    "prompt": "a woman typing on a laptop in a coffee shop",
+    "seed": 6,
+    "prompt_index": 5
+  },
+  {
+    "file": "c006.png",
+    "prompt": "a golden retriever sitting on a porch",
+    "seed": 7,
+    "prompt_index": 6
+  },
+  {
+    "file": "c007.png",
+    "prompt": "a red car parked next to a lamppost",
+    "seed": 8,
+    "prompt_index": 7
+  },
+  {
+    "file": "c008.png",
+    "prompt": "a chef arranging sushi on a plate",
+    "seed": 9,
+    "prompt_index": 8
+  },
+  {
+    "file": "c009.png",
+    "prompt": "a sailboat on a calm lake at sunset",
+    "seed": 10,
+    "prompt_index": 9
+  }
+]

@@ -1,0 +1,6 @@
+| Setting       | Filter   | Reverse Guidance   |   AVG_e_CS |   AVG_r_CS |   coco_CS |   coco_FID | summary_path                                                                |
+|:--------------|:---------|:-------------------|-----------:|-----------:|----------:|-----------:|:----------------------------------------------------------------------------|
+| Base          | Off      | Off                |     0.2397 |     0.2259 |    0.255  |    235.796 | unified/eval_ablation/base_small/algorithm_a_ablation_summary.json          |
+| Filter only   | On       | Off                |     0.2382 |     0.2255 |    0.2534 |    240.695 | unified/eval_ablation/filter_only_small/algorithm_a_ablation_summary.json   |
+| Guidance only | Off      | On                 |     0.1659 |     0.2259 |    0.255  |    235.796 | unified/eval_ablation/guidance_only_small/algorithm_a_ablation_summary.json |
+| Full          | On       | On                 |     0.1614 |     0.2255 |    0.2534 |    240.695 | unified/eval_ablation/full_small/algorithm_a_ablation_summary.json          |

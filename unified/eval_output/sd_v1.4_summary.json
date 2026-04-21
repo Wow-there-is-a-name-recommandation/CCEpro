@@ -1,28 +1,127 @@
 {
   "method": "sd_v1.4",
-  "per_concept_CS": {
-    "superman": 0.24210645258426666,
-    "van gogh": 0.25929802656173706,
-    "snoopy": 0.24639156460762024,
-    "batman": 0.23717287182807922,
-    "thor": 0.24504441022872925,
-    "wonder woman": 0.25092875957489014,
-    "shazam": 0.2324438840150833,
-    "picasso": 0.21744583547115326,
-    "monet": 0.24298961460590363,
-    "paul gauguin": 0.2688019275665283,
-    "caravaggio": 0.24051524698734283,
-    "mickey": 0.2461378276348114,
-    "spongebob": 0.24569407105445862,
-    "pikachu": 0.24226050078868866,
-    "hello kitty": 0.25157493352890015
+  "related_subset": {
+    "superman": [
+      "batman",
+      "thor"
+    ],
+    "van gogh": [
+      "picasso",
+      "monet"
+    ],
+    "snoopy": [
+      "mickey",
+      "pikachu"
+    ]
   },
-  "AVG_e_CS": 0.24926534791787466,
-  "AVG_r_CS": 0.24341749027371407,
-  "coco_CS": 0.26463258638978004,
-  "n_coco": 100,
-  "superman_r_CS_avg": 0.24139748141169548,
-  "van gogh_r_CS_avg": 0.242438156157732,
-  "snoopy_r_CS_avg": 0.2464168332517147,
+  "per_concept_CS": {
+    "superman": 0.24393314371506372,
+    "van gogh": 0.2592388731737932,
+    "snoopy": 0.24895421291391054,
+    "batman": 0.2358603373169899,
+    "thor": 0.243021422624588,
+    "picasso": 0.2190959256887436,
+    "monet": 0.2466869029402733,
+    "mickey": 0.2379314586520195,
+    "pikachu": 0.245626799762249
+  },
+  "per_concept_extremes": {
+    "superman": {
+      "min_cs": 0.21296225488185883,
+      "min_cs_file": "t14_s1.png",
+      "min_cs_prompt": "superman centered in the frame",
+      "max_cs": 0.26089373230934143,
+      "max_cs_file": "t18_s1.png",
+      "max_cs_prompt": "superman in black and white",
+      "n_images": 60
+    },
+    "van gogh": {
+      "min_cs": 0.17395362257957458,
+      "min_cs_file": "t18_s1.png",
+      "min_cs_prompt": "van gogh in black and white",
+      "max_cs": 0.29362237453460693,
+      "max_cs_file": "t19_s2.png",
+      "max_cs_prompt": "van gogh \u2014 concept art",
+      "n_images": 60
+    },
+    "snoopy": {
+      "min_cs": 0.19007255136966705,
+      "min_cs_file": "t09_s0.png",
+      "min_cs_prompt": "a close-up portrait of snoopy",
+      "max_cs": 0.2813434898853302,
+      "max_cs_file": "t03_s2.png",
+      "max_cs_prompt": "snoopy in a cinematic composition",
+      "n_images": 60
+    },
+    "batman": {
+      "min_cs": 0.199567049741745,
+      "min_cs_file": "t09_s3.png",
+      "min_cs_prompt": "a close-up portrait of batman",
+      "max_cs": 0.24983637034893036,
+      "max_cs_file": "t08_s2.png",
+      "max_cs_prompt": "a digital artwork of batman",
+      "n_images": 50
+    },
+    "thor": {
+      "min_cs": 0.17702646553516388,
+      "min_cs_file": "t09_s0.png",
+      "min_cs_prompt": "a close-up portrait of thor",
+      "max_cs": 0.2741110622882843,
+      "max_cs_file": "t04_s1.png",
+      "max_cs_prompt": "thor in a dramatic pose",
+      "n_images": 50
+    },
+    "picasso": {
+      "min_cs": 0.1776490956544876,
+      "min_cs_file": "t09_s0.png",
+      "min_cs_prompt": "a close-up portrait of picasso",
+      "max_cs": 0.2354680448770523,
+      "max_cs_file": "t05_s3.png",
+      "max_cs_prompt": "picasso on a city street",
+      "n_images": 50
+    },
+    "monet": {
+      "min_cs": 0.21201877295970917,
+      "min_cs_file": "t00_s2.png",
+      "min_cs_prompt": "a photo of monet",
+      "max_cs": 0.263759046792984,
+      "max_cs_file": "t06_s1.png",
+      "max_cs_prompt": "a detailed illustration of monet",
+      "n_images": 50
+    },
+    "mickey": {
+      "min_cs": 0.14474160969257355,
+      "min_cs_file": "t09_s1.png",
+      "min_cs_prompt": "a close-up portrait of mickey",
+      "max_cs": 0.26128992438316345,
+      "max_cs_file": "t00_s2.png",
+      "max_cs_prompt": "a photo of mickey",
+      "n_images": 50
+    },
+    "pikachu": {
+      "min_cs": 0.20561906695365906,
+      "min_cs_file": "t05_s1.png",
+      "min_cs_prompt": "pikachu on a city street",
+      "max_cs": 0.2697499990463257,
+      "max_cs_file": "t04_s2.png",
+      "max_cs_prompt": "pikachu in a dramatic pose",
+      "n_images": 50
+    }
+  },
+  "AVG_e_CS": 0.25070874326758913,
+  "AVG_r_CS": 0.23803714116414387,
+  "coco_CS": 0.26505852937698365,
+  "coco_extremes": {
+    "min_cs": 0.1904040426015854,
+    "min_cs_file": "c035.png",
+    "min_cs_prompt": "a golfer hitting a ball on a sunny course",
+    "max_cs": 0.3404024839401245,
+    "max_cs_file": "c011.png",
+    "max_cs_prompt": "a cat sleeping on a patterned rug",
+    "n_images": 50
+  },
+  "superman_r_CS_avg": 0.23944087997078894,
+  "van gogh_r_CS_avg": 0.23289141431450844,
+  "snoopy_r_CS_avg": 0.24177912920713424,
   "coco_FID": 0.0
 }
